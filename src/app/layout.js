@@ -1,3 +1,4 @@
+import Navbar from "@/components/nav/nav";
 import "@/styles/globals.css";
 import { roboto } from "@/ui/font";
 
@@ -9,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="no">
-            <body className={roboto.className}>{children}</body>
+            <body className={roboto.className}>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
 }
