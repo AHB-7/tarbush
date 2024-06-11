@@ -1,8 +1,9 @@
-import { Bellota, Roboto_Mono } from "next/font/google";
+import { Bellota, Roboto } from "next/font/google";
 
-export const roboto_mono = Roboto_Mono({
+export const roboto = Roboto({
     subsets: ["latin"],
     display: "swap",
+    weight: "400",
 });
 export const bellota = Bellota({
     weight: "400",

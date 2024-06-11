@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Banner({ data }) {
     return (
         <div
@@ -19,9 +21,12 @@ export default function Banner({ data }) {
                         <h4 className="mb-6 text-xl font-thin">
                             {data?.description}
                         </h4>
-                        <button className="px-6 py-2 bg-white text-black rounded-lg">
+                        <Link
+                            href="/meny"
+                            className="px-6 py-2 bg-white text-black rounded-lg"
+                        >
                             {data?.heroBtn}
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
