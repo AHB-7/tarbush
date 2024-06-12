@@ -19,3 +19,25 @@ export async function bannerSection() {
     const res = await graphQL.request(query);
     return res;
 }
+export async function menyItems() {
+    const query = gql`
+        query menyItems {
+            menies {
+                dishName
+                dishImage {
+                    url
+                }
+                allergier
+                gruppe
+                id
+                price
+                rating
+                ingredients {
+                    text
+                }
+            }
+        }
+    `;
+    const res = await graphQL.request(query);
+    return res;
+}

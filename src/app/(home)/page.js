@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
 export default function Home() {
     const [data, setData] = useState();
     useEffect(() => {
-        bannerData();
+        fetchBanner();
     }, []);
-    const bannerData = async () => {
+    const fetchBanner = async () => {
         const res = await bannerSection();
         setData(res);
         return;
