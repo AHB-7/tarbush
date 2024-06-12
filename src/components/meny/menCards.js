@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import Loading from "../loading";
 
 export default function Meny({ data }) {
-    if (!data) return <p>Loading...</p>;
+    if (!data) return <Loading />;
 
     return (
         <div className="w-fit">

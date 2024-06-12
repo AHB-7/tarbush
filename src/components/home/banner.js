@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Countdown from "./time";
+import Loading from "../loading";
 
 export default function Banner({ data }) {
+    if (!data) return <Loading />;
     return (
         <div
-            className="relative overflow-hidden bg-cover bg-no-repeat bg-fixed text-center"
+            className="relative overflow-hidden bg-cover bg-no-repeat bg-fixed text-center bg-center"
             style={{
-                backgroundImage: `url(${data?.bannerImage?.url})`,
+                backgroundImage: `url(/images/grillmat.png)`,
                 height: "100vh",
             }}
         >
@@ -14,18 +17,18 @@ export default function Banner({ data }) {
                 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
             >
                 <div className="flex h-full items-center justify-center">
-                    <div className="text-white backdrop-blur-sm bg-white-20 p-12 rounded-lg">
+                    <div className="text-white backdrop-blur-sm bg-white-20 p-5 md:p-10 rounded-lg">
                         <h2 className="mb-4 text-4xl font-thin">
-                            {data?.heading}
+                            Velkommen til vår restaurant
                         </h2>
                         <h4 className="mb-6 text-xl font-thin">
-                            {data?.description}
+                            <Countdown />
                         </h4>
                         <Link
                             href="/meny"
-                            className="px-6 py-2 bg-white text-black rounded-lg"
+                            className="px-6 py-2 bg-white text-black rounded-lg shadow-inner hover:shadow-xl transition-shadow duration-300"
                         >
-                            {data?.heroBtn}
+                            Vår Meny
                         </Link>
                     </div>
                 </div>

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Header() {
     return (
         <div className=" bg-gradient-to-r from-red-700 to-red-400 h-36 rounded-b-3xl flex justify-center">

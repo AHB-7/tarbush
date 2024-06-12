@@ -17,12 +17,12 @@ export default function Navbar() {
 
     useEffect(() => {
         if (isActive) {
-            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener("click", handleClickOutside);
         } else {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("click", handleClickOutside);
         }
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("click", handleClickOutside);
         };
     }, [isActive]);
 
@@ -31,7 +31,7 @@ export default function Navbar() {
             <div
                 className={nav.btn}
                 onClick={() => {
-                    setActive(!isActive);
+                    setActive((prevActive) => !prevActive);
                 }}
             >
                 <div
