@@ -66,9 +66,18 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                         <p className="text-xs text-gray-400 font-semibold">
                             Contact
                         </p>
-                        <p className="text-xs text-gray-400 font-semibold">
+                        <Link
+                            href="/adresse"
+                            className={clsx(
+                                `hover:text-red-500 transition-colors text-xs text-gray-400 font-semibold duration-300 ${
+                                    pathname === "/adresse"
+                                        ? "text-red-500"
+                                        : ""
+                                }`
+                            )}
+                        >
                             Map
-                        </p>
+                        </Link>
                         <p className="text-xs text-gray-400 font-semibold">
                             Privacy
                         </p>
