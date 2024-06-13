@@ -1,14 +1,24 @@
-import { useState } from "react";
+// pages/index.js or relevant component file
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
 import Image from "next/image";
 import Loading from "../loading";
 import cardStyle from "@/styles/card.module.css";
 import { roudIt } from "@/func/meny";
+import { menyItems } from "@/services";
 
-export default function Meny({ data }) {
+const Meny = () => {
+    const [data, setData] = useState(null);
     const [isHovered, setIsHovered] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            const result = await menyItems(100); // Fetching with limit 50
+            setData(result.menies);
+        }
+        fetchData();
+    }, []);
 
     if (!data) return <Loading />;
 
@@ -71,5 +81,6 @@ export default function Meny({ data }) {
             ))}
         </div>
     );
-}
-// https://g.page/r/CcaG5K4q6pc1EBI/review
+};
+
+export default Meny;

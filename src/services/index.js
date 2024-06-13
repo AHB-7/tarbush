@@ -1,3 +1,4 @@
+// api.js
 import { api_URL } from "@/components";
 import { GraphQLClient, gql } from "graphql-request";
 
@@ -19,10 +20,11 @@ export async function bannerSection() {
     const res = await graphQL.request(query);
     return res;
 }
-export async function menyItems() {
+
+export async function menyItems(limit = 50) {
     const query = gql`
-        query menyItems {
-            menies {
+        query menyItems($limit: Int!) {
+            menies(first: $limit) {
                 dishName
                 dishImage {
                     url
@@ -38,6 +40,6 @@ export async function menyItems() {
             }
         }
     `;
-    const res = await graphQL.request(query);
+    const res = await graphQL.request(query, { limit });
     return res;
 }
