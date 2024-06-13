@@ -48,8 +48,12 @@ const Meny = () => {
                     <h2 className="text-xl font-bold py-4 border-b">
                         {item.dishName}
                     </h2>
-                    <div className=" h-20 py-2">
-                        <p className=" text-pretty ">{item.ingredients.text}</p>
+                    <div className="h-20 py-2">
+                        {item.ingredients && item.ingredients.text && (
+                            <p className="text-pretty">
+                                {item.ingredients.text}
+                            </p>
+                        )}
                     </div>
                     <div className=" flex justify-start py-2">
                         <p className=" text-zinc-300 me-2">Allergier: </p>
