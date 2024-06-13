@@ -1,0 +1,14 @@
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        width: 100%;
+        max-width: 27rem;
+        height: 41rem;
+    }
+}

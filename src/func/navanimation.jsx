@@ -1,5 +1,3 @@
-import { easeInOut } from "framer-motion";
-
 export const menuSlide = {
     initial: {
         x: "100%",
