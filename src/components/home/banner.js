@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Countdown from "./time";
 import Loading from "../loading";
 
 export default function Banner({ data }) {
@@ -14,19 +13,17 @@ export default function Banner({ data }) {
         >
             <div
                 className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
+                style={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}
             >
                 <div className="flex h-full items-center justify-center">
                     <div className="text-white backdrop-blur-sm bg-white-20 p-5 md:p-10 rounded-lg">
                         <h2 className="mb-4 text-4xl font-thin">
                             Velkommen til vår restaurant
                         </h2>
-                        <h4 className="mb-6 text-xl font-thin">
-                            <Countdown />
-                        </h4>
+                        <h4 className="mb-6 text-xl font-thin"></h4>
                         <Link
                             href="/meny"
-                            className="px-6 py-2 bg-white text-black rounded-lg shadow-inner hover:shadow-xl transition-shadow duration-300"
+                            className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
                         >
                             Vår Meny
                         </Link>

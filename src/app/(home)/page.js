@@ -1,6 +1,7 @@
 "use client";
 
 import Banner from "@/components/home/banner";
+import Countdown from "@/components/home/time";
 import { bannerSection } from "@/services/index";
 import { useEffect, useState } from "react";
 
@@ -17,6 +18,7 @@ export default function Home() {
     return (
         <>
             <Banner data={data?.banners[0]} />
+            <Countdown />
         </>
     );
 }

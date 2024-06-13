@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Countdown = () => {
     const calculateTimeLeft = () => {
@@ -12,7 +13,6 @@ const Countdown = () => {
 
         const now = new Date();
 
-        // If the target date is in the past, add a year to the target date
         if (now > targetDate) {
             targetDate.setFullYear(targetDate.getFullYear() + 1);
         }
@@ -37,23 +37,47 @@ const Countdown = () => {
         return timeLeft;
     };
 
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+    const [timeLeft, setTimeLeft] = useState({});
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        setIsMounted(true);
         const timer = setTimeout(() => {
             setTimeLeft(calculateTimeLeft());
-        }, 1000);
+        }, 10);
 
         return () => clearTimeout(timer);
-    });
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeLeft(calculateTimeLeft());
+        }, 10);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    if (!isMounted) {
+        return null;
+    }
 
     return (
-        <div className="w-full p-7 text-center bg-black rounded-lg bg-opacity-65">
-            <h2 className="pb-2 text-3xl font-thin">Grand Åpning</h2>
-            <p className=" font-bold text-xl bg-gradient-to-r from-slate-50 to-red-700 bg-clip-text text-transparent">
-                {timeLeft.days} Days {timeLeft.hours} Hours {timeLeft.minutes}{" "}
-                Minutes {timeLeft.seconds} Seconds
-            </p>
+        <div className="absolute top-0 w-full flex flex-col gap-7 py-7 align-middle text-center bg-black bg-opacity-65">
+            <div>
+                <h2 className="pb-2 text-3xl font-thin">Grand Åpning</h2>
+                <p className="font-bold text-xl bg-gradient-to-r from-slate-50 to-red-700 bg-clip-text text-transparent">
+                    {timeLeft.days} Days {timeLeft.hours} Hours{" "}
+                    {timeLeft.minutes} Minutes {timeLeft.seconds} Seconds
+                </p>
+            </div>
+            <div>
+                <Link
+                    href="/aapning"
+                    className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
+                >
+                    Les Mer!
+                </Link>
+            </div>
         </div>
     );
 };
