@@ -7,12 +7,13 @@ import { menuSlide, slideIt } from "@/func/navanimation";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import Image from "next/image";
 
 const Menu = React.forwardRef(({ setActive }, ref) => {
     const pathname = usePathname();
     const navItems = [
         {
-            title: "home",
+            title: "Tarbush",
             href: "/",
         },
         {
@@ -67,7 +68,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                             href="/kontakt"
                             className={clsx(
                                 `hover:text-red-500 transition-colors text-xs text-gray-400 font-semibold duration-300 ${
-                                    pathname === "/adresse"
+                                    pathname === "/kontakt"
                                         ? "text-red-500"
                                         : ""
                                 }`
@@ -92,6 +93,15 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className="flex justify-center items-end gap-2">
+                <Image
+                    src="/images/logo-circle.png"
+                    alt="logo image"
+                    className="size-24 backdrop-saturate-50"
+                    width="40"
+                    height="40"
+                />
             </div>
         </motion.div>
     );

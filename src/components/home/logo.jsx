@@ -5,7 +5,7 @@ export default function Logo() {
     return (
         <Link
             href="/"
-            className="absolute top-0 w-full flex flex-col gap-7 py-7"
+            className="absolute top-0 w-full flex flex-col gap-7 py-7 "
         >
             <Image
                 src="/images/logo.png"

@@ -1,6 +1,6 @@
 import Navbar from "@/components/nav/nav";
 import "@/styles/globals.css";
-import { roboto } from "@/ui/font";
+import { montserrat } from "@/ui/font";
 import Head from "next/head";
 
 export const metadata = {
@@ -126,7 +126,7 @@ export default function RootLayout({ children }) {
                 `}
                 </script>
             </Head>
-            <body className={roboto.className}>
+            <body className={montserrat.className}>
                 <Navbar />
                 {children}
             </body>

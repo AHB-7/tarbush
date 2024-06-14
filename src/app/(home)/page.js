@@ -1,7 +1,6 @@
 "use client";
 
 import Banner from "@/components/home/banner";
-import Countdown from "@/components/home/time";
 import { bannerSection } from "@/services/index";
 import { useEffect, useState } from "react";
 
