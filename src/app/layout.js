@@ -33,7 +33,6 @@ export const metadata = {
         "FALAFEL",
     ],
     author: "Tarbush Restaurant",
-    viewport: "width=device-width, initial-scale=1.0",
     link: {
         rel: "canonical",
         href: "https://www.tarbush.no",

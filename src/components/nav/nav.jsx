@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import nav from "@/styles/nav.module.css";
 import Menu from "./menu";
 import { AnimatePresence } from "framer-motion";
+import Logo from "../home/logo";
 
 export default function Navbar() {
     const [isActive, setActive] = useState(false);
@@ -43,6 +44,7 @@ export default function Navbar() {
             <AnimatePresence>
                 {isActive && <Menu ref={menuRef} setActive={setActive} />}
             </AnimatePresence>
+            <Logo />
         </nav>
     );
 }
