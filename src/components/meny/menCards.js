@@ -60,8 +60,14 @@ const Meny = () => {
                     {expandedGroups[gruppe] && (
                         <div className={cardStyle.cardContainer}>
                             {groupedData[gruppe].map((item) => (
-                                <div
+                                <motion.div
                                     key={item.id}
+                                    initial={{ y: 20, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{
+                                        ease: "easeInOut",
+                                        duration: 0.7,
+                                    }}
                                     className={`${cardStyle.card} p-4 shadow-md shadow-stone-900 rounded-lg`}
                                     onMouseEnter={() => setIsHovered(item.id)}
                                     onMouseLeave={() => setIsHovered(null)}
@@ -125,7 +131,7 @@ const Meny = () => {
                                             Ring oss
                                         </Link>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     )}
