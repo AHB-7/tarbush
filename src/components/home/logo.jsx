@@ -3,17 +3,16 @@ import Link from "next/link";
 
 export default function Logo() {
     return (
-        <Link
-            href="/"
-            className="fixed top-0 w-full flex flex-col gap-7 py-7 z-10"
-        >
-            <Image
-                src="/images/logo.png"
-                width={50}
-                height={50}
-                className="absolute bg-none top-5 left-5 z-10 rounded-full "
-                alt="Picture of the author"
-            />
-        </Link>
+        <div className="fixed top-0 w-12 flex flex-col gap-7 py-7 z-10">
+            <Link href="/" className="w-fit">
+                <Image
+                    src="/images/logo.png"
+                    width={50}
+                    height={50}
+                    className="absolute bg-none top-5 left-5 z-10 rounded-full "
+                    alt="Picture of the author"
+                />
+            </Link>
+        </div>
     );
 }

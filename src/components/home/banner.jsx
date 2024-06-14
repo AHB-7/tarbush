@@ -2,7 +2,7 @@ import Link from "next/link";
 import Loading from "../loading";
 import Box from "./boxes";
 
-export default function Banner({ data }) {
+export default function BannerPage({ data }) {
     if (!data) return <Loading />;
     return (
         <>
