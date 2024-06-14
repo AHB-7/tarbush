@@ -18,7 +18,6 @@ export default function Home() {
     return (
         <>
             <Banner data={data?.banners[0]} />
-            <Countdown />
         </>
     );
 }
