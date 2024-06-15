@@ -4,18 +4,13 @@ import { useEffect, useState } from "react";
 const Countdown = () => {
     const calculateTimeLeft = () => {
         const targetDate = new Date();
-        targetDate.setMonth(5); // Months are zero-indexed (0 = January, 5 = June)
-        targetDate.setDate(14); // Day of the month
+        targetDate.setDate(targetDate.getDate() + 1); // Tomorrow's date
         targetDate.setHours(16); // 16:00 hours (4:00 PM)
         targetDate.setMinutes(0);
         targetDate.setSeconds(0);
         targetDate.setMilliseconds(0);
 
         const now = new Date();
-
-        if (now > targetDate) {
-            targetDate.setFullYear(targetDate.getFullYear() + 1);
-        }
 
         const difference = targetDate - now;
 
@@ -37,14 +32,14 @@ const Countdown = () => {
         return timeLeft;
     };
 
-    const [timeLeft, setTimeLeft] = useState({});
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
         const timer = setTimeout(() => {
             setTimeLeft(calculateTimeLeft());
-        }, 10);
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -52,7 +47,7 @@ const Countdown = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
-        }, 10);
+        }, 1000);
 
         return () => clearInterval(timer);
     }, []);
@@ -62,18 +57,28 @@ const Countdown = () => {
     }
 
     return (
-        <div className="absolute top-0 w-full flex flex-col gap-7 py-7 align-middle text-center bg-black bg-opacity-65">
+        <div
+            className="absolute top-0 w-full flex flex-col gap-7 py-7 align-middle text-center bg-white bg-opacity-85"
+            style={{
+                backgroundImage: `url(/images/eid2.png)`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                width: "100%",
+            }}
+        >
             <div>
-                <h2 className="pb-2 text-3xl font-thin">Grand Åpning</h2>
-                <p className="font-bold text-xl bg-gradient-to-r from-slate-50 to-red-700 bg-clip-text text-transparent">
+                <h2 className="pb-2 text-3xl font-semibold text-black">
+                    Eid Events
+                </h2>
+                <p className="font-bold text-xl text-red-700 bg-clip-text text-transparent">
                     {timeLeft.days} Days {timeLeft.hours} Hours{" "}
                     {timeLeft.minutes} Minutes {timeLeft.seconds} Seconds
                 </p>
             </div>
             <div>
                 <Link
-                    href="/aapning"
-                    className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
+                    href="/events"
+                    className="px-6 py-2 bg-black text-white hover:bg-white hover:text-black transition-all  rounded-lg shadow-inner hover:shadow-xl duration-300"
                 >
                     Les Mer!
                 </Link>

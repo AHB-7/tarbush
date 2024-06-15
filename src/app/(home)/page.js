@@ -3,6 +3,7 @@
 import { bannerSection } from "../../services/index";
 import { useEffect, useState } from "react";
 import BannerPage from "../../components/home/BannerPage";
+import Countdown from "@/components/home/time";
 
 export default function Home() {
     const [data, setData] = useState();
@@ -17,6 +18,7 @@ export default function Home() {
     return (
         <>
             <BannerPage data={data?.banners[0]} />
+            <Countdown />
         </>
     );
 }
