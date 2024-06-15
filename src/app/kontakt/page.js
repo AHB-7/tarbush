@@ -1,4 +1,4 @@
-import ContactClient from "@/components/kontakt/kontakt-client";
+import ContactClient from "../../components/kontakt/kontakt-client";
 
 export const metadata = {
     title: "Kontakt",

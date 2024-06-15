@@ -1,6 +1,6 @@
-import { menyItems } from "@/services";
-import MenyClient from "@/components/meny/menyClient";
-import Header from "@/components/meny/header";
+import { menyItems } from "../../services/index";
+import MenyClient from "../../components/meny/menyClient";
+import Header from "../../components/meny/header";
 import Head from "next/head";
 
 export const metadata = {

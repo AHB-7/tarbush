@@ -1,8 +1,8 @@
 "use client";
 
-import { bannerSection } from "@/services/index";
+import { bannerSection } from "../../services/index";
 import { useEffect, useState } from "react";
-import BannerPage from "../../components/home/banner";
+import BannerPage from "../../components/home/BannerPage";
 
 export default function Home() {
     const [data, setData] = useState();

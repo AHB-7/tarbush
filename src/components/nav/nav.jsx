@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import nav from "@/styles/nav.module.css";
+import nav from "../../styles/nav.module.css";
 import Menu from "./menu";
 import { AnimatePresence } from "framer-motion";
 import Logo from "../home/logo";

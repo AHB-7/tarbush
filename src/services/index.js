@@ -1,5 +1,5 @@
 // api.js
-import { api_URL } from "@/components";
+import { api_URL } from "../components/index";
 import { GraphQLClient, gql } from "graphql-request";
 
 const graphQL = new GraphQLClient(api_URL);

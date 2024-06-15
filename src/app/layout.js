@@ -1,6 +1,6 @@
-import Navbar from "@/components/nav/nav";
-import "@/styles/globals.css";
-import { montserrat } from "@/ui/font";
+import Navbar from "../components/nav/nav";
+import "../styles/globals.css";
+import { montserrat } from "../ui/font";
 import Head from "next/head";
 
 export const metadata = {

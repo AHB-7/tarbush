@@ -3,9 +3,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Loading from "../loading";
-import cardStyle from "@/styles/card.module.css";
-import { roudIt } from "@/func/meny";
-import { menyItems } from "@/services";
+import cardStyle from "../../styles/card.module.css";
+import { roudIt } from "../../func/meny";
+import { menyItems } from "../../services/index";
 import { CiCircleChevDown } from "react-icons/ci";
 
 const Meny = () => {
@@ -84,7 +84,6 @@ const Meny = () => {
                                         <Image
                                             src={item.dishImage?.url || ""}
                                             alt={item.dishName}
-                                            loading="lazy"
                                             width={400}
                                             height={400}
                                             className={`${cardStyle.cardImage}`}
