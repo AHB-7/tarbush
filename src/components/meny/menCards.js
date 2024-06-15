@@ -45,11 +45,11 @@ const Meny = () => {
     };
 
     return (
-        <div>
+        <div className="container mx-auto">
             {Object.keys(groupedData).map((gruppe) => (
                 <div key={gruppe} className="mb-8">
                     <div
-                        className="container w-11/12 outline outline-orange-50 outline-1 flex items-center justify-center mx-auto rounded-lg my-4 py-2 cursor-pointer"
+                        className="container outline outline-orange-50 outline-1 flex items-center justify-center mx-auto rounded-lg my-4 py-2 cursor-pointer"
                         onClick={() => toggleGroup(gruppe)}
                     >
                         <h2 className="text-2xl w-full ps-5 font-bold">
@@ -58,7 +58,9 @@ const Meny = () => {
                         <CiCircleChevDown className="text-4xl me-3" />
                     </div>
                     {expandedGroups[gruppe] && (
-                        <div className={cardStyle.cardContainer}>
+                        <div
+                            className={`${cardStyle.cardContainer} flex justify-around p-2 flex-wrap`}
+                        >
                             {groupedData[gruppe].map((item) => (
                                 <motion.div
                                     key={item.id}
@@ -68,7 +70,7 @@ const Meny = () => {
                                         ease: "easeInOut",
                                         duration: 0.7,
                                     }}
-                                    className={`${cardStyle.card} p-4 shadow-md shadow-stone-900 rounded-lg`}
+                                    className={`${cardStyle.card} p-4 shadow-lg h-auto shadow-stone-900 rounded-lg w-96`}
                                     onMouseEnter={() => setIsHovered(item.id)}
                                     onMouseLeave={() => setIsHovered(null)}
                                 >
@@ -81,18 +83,20 @@ const Meny = () => {
                                         }
                                         variants={roudIt}
                                     >
-                                        <Image
-                                            src={item.dishImage?.url || ""}
-                                            alt={item.dishName}
-                                            width={400}
-                                            height={400}
-                                            className={`${cardStyle.cardImage}`}
-                                        />
+                                        {item.dishImage?.url && (
+                                            <Image
+                                                src={item.dishImage.url}
+                                                alt={item.dishName}
+                                                width={400}
+                                                height={400}
+                                                className={`${cardStyle.cardImage}`}
+                                            />
+                                        )}
                                     </motion.div>
                                     <h2 className="text-xl font-bold py-4 border-b">
                                         {item.dishName}
                                     </h2>
-                                    <div className="h-20 py-2">
+                                    <div className="h-20 py-4">
                                         {item.ingredients &&
                                             item.ingredients.text && (
                                                 <p className="text-pretty">
@@ -100,35 +104,45 @@ const Meny = () => {
                                                 </p>
                                             )}
                                     </div>
-                                    <div className="flex justify-start py-2">
-                                        <p className="text-zinc-300 me-2">
-                                            Allergier:{" "}
-                                        </p>
-                                        {item.allergier && (
-                                            <div className="flex items-center">
-                                                {item.allergier.map(
-                                                    (allergy, index) => (
-                                                        <p
-                                                            key={index}
-                                                            className="w-fit bg-yellow-400 text-black text-xs me-1 px-2 py-0.5 rounded-full dark:bg-blue-600 font-thin dark:text-white"
-                                                        >
-                                                            {allergy.trim()}
-                                                        </p>
-                                                    )
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div className="flex justify-between py-3 border-t">
-                                        <p className="text-xl text-zinc-300 me-2">
-                                            Pris: {item.price} NOK{" "}
-                                        </p>
-                                        <Link
-                                            href={`/kontakt`}
-                                            className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
-                                        >
-                                            Ring oss
-                                        </Link>
+                                    <div className="pt-6">
+                                        {Array.isArray(item.allergier) &&
+                                            item.allergier.length > 0 && (
+                                                <div className="flex justify-start">
+                                                    <p className="text-zinc-300 me-2">
+                                                        Allergier:{" "}
+                                                    </p>
+                                                    {item.allergier && (
+                                                        <div className="flex items-center">
+                                                            {item.allergier.map(
+                                                                (
+                                                                    allergy,
+                                                                    index
+                                                                ) => (
+                                                                    <p
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                        className="w-fit bg-yellow-400 text-black text-xs me-1 px-2 py-0.5 rounded-full dark:bg-blue-600 font-thin dark:text-white"
+                                                                    >
+                                                                        {allergy.trim()}
+                                                                    </p>
+                                                                )
+                                                            )}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        <div className="flex justify-between py-2">
+                                            <p className="text-xl text-zinc-300 me-2">
+                                                Pris: {item.price} NOK{" "}
+                                            </p>
+                                            <Link
+                                                href={`/kontakt`}
+                                                className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
+                                            >
+                                                Bestill
+                                            </Link>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}
