@@ -93,6 +93,9 @@ export const metadata = {
     htmlAttributes: {
         lang: "no",
     },
+    verification: {
+        google: "AmKgMh56Lz2XNzwKxiFeEQjC_EFQTgToiCh2juC9Wxs",
+    },
 };
 
 export default function RootLayout({ children }) {
@@ -100,6 +103,10 @@ export default function RootLayout({ children }) {
         <html lang="no">
             <Head>
                 <title>{metadata.title}</title>
+                <meta
+                    name="google-site-verification"
+                    content="AmKgMh56Lz2XNzwKxiFeEQjC_EFQTgToiCh2juC9Wxs"
+                />
                 <meta name="description" content={metadata.description} />
                 <meta name="keywords" content={metadata.keywords.join(", ")} />
                 <link rel="canonical" href={metadata.link.href} />
