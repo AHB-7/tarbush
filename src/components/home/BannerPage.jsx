@@ -34,7 +34,7 @@ export default function BannerPage({ data }) {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-4 sm:bottom-12  sm:bottom-44 flex items-center justify-center w-full gap-7">
+            <div className="absolute bottom-4 sm:bottom-12 flex items-center justify-center w-full gap-7">
                 <Box />
             </div>
         </>
