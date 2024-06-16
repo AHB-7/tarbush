@@ -33,7 +33,7 @@ export default function Page() {
             <div className="relative h-full w-screen overflow-hidden sm:px-20 bg-opacity-20">
                 <div className="z-10 flex h-full flex-col items-center justify-center space-y-4">
                     <h1 className="text-center text-5xl font-bold text-white py-6">
-                        Kontakt informasjon til Tarbush
+                        Kontakt informasjonen til Tarbush
                     </h1>
                     <ContactClient />
                     <OpningsTimes />
