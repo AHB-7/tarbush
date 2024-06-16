@@ -10,7 +10,7 @@ export default function BannerPage({ data }) {
             <div
                 className="relative overflow-hidden bg-cover bg-no-repeat bg-fixed text-center bg-center"
                 style={{
-                    backgroundImage: `url(/images/grillmat.png)`,
+                    backgroundImage: `url(/images/grillmatt.webp)`,
                     height: "100vh",
                 }}
             >
