@@ -1,3 +1,4 @@
+import OpningsTimes from "@/components/kontakt/opningstimes";
 import ContactClient from "../../components/kontakt/kontakt-client";
 
 export const metadata = {
@@ -29,78 +30,18 @@ export const metadata = {
 export default function Page() {
     return (
         <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-6xl mb-8 border-b-8">Kontakt</h1>
-            <ContactClient />
-            <table className="table-auto border-collapse border border-gray-400 mt-5">
-                <thead>
-                    <tr className="bg-red-700">
-                        <th className="border border-gray-300 px-12 py-2">
-                            Dag
-                        </th>
-                        <th className="border border-gray-300 px-12 py-2">
-                            Åpningstider
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Mandag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            11:00 - 22:00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Tirsdag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            11:00 - 22:00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Onsdag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            11:00 - 22:00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Torsdag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            11:00 - 22:00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Fredag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            10:00 - 23:00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Lørdag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            11:00 - 23:00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="border border-gray-300 px-12 py-2">
-                            Søndag
-                        </td>
-                        <td className="border border-gray-300 px-12 py-2">
-                            10:00 - 22:00
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div className="relative h-full w-screen overflow-hidden sm:px-20 bg-opacity-20">
+                <div className="z-10 flex h-full flex-col items-center justify-center space-y-4">
+                    <h1 className="text-center text-5xl font-bold text-white py-6">
+                        Kontakt informasjon til Tarbush
+                    </h1>
+                    <ContactClient />
+                    <OpningsTimes />
+                </div>
+                <div className="-z-1 absolute bottom-3 left-1/4 h-24 w-24 rounded-full bg-white bg-gradient-to-b from-white to-red-600 opacity-20"></div>
+                <div className="-z-1 absolute -top-4 left-1/2 h-24 w-24 rounded-full bg-white bg-gradient-to-b from-white to-red-600 opacity-20"></div>
+                <div className="-z-1 absolute top-2/3 left-3/4 h-72 w-40 rounded-full bg-white bg-gradient-to-b from-white to-red-600 opacity-20"></div>
+            </div>
         </div>
     );
 }

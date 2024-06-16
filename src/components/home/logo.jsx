@@ -10,7 +10,7 @@ export default function Logo() {
                     width={50}
                     height={50}
                     className="absolute bg-none top-5 left-5 z-10 rounded-full "
-                    alt="Picture of the author"
+                    alt="Logo av Tarbush resturant i Trondheim"
                 />
             </Link>
         </div>

@@ -20,10 +20,12 @@ export default function BannerPage({ data }) {
                 >
                     <div className="flex h-full items-center justify-center">
                         <div className="text-white backdrop-blur-md bg-white-20 p-5 md:p-10 rounded-lg">
-                            <h2 className="mb-4 text-2xl">
-                                Velkommen til vår restaurant
+                            <h1 className="mb-2 text-2xl uppercase">
+                                Velkommen til Tarbush Resturant
+                            </h1>
+                            <h2 className="mb-6 text-xl font-thin">
+                                {data.description}
                             </h2>
-                            <h4 className="mb-6 text-xl font-thin"></h4>
                             <Link
                                 href="/meny"
                                 className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
