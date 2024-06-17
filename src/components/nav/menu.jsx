@@ -33,7 +33,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
             animate="enter"
             exit="exit"
             initial="initial"
-            className={menuStyle.menue}
+            className="h-screen max-w-[20rem] fixed top-0 right-0 bg-gradient-to-b from-brand-dark-950 to-brand-dark-900 z-10"
             ref={ref}
         >
             <div className={menuStyle.body}>
