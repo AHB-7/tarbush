@@ -1,7 +1,7 @@
 import Script from "next/script";
 import Navbar from "../components/nav/nav";
 import "../styles/globals.css";
-import { montserrat } from "../ui/font";
+import { montserrat, rubik } from "../ui/font";
 import Head from "next/head";
 
 export const metadata = {
@@ -135,7 +135,7 @@ export default function RootLayout({ children }) {
                     }}
                 />
             </Head>
-            <body className={montserrat.className}>
+            <body className={rubik.className}>
                 <Navbar />
                 {children}
             </body>

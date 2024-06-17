@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { rubik } from "../../ui/font";
 
 export default function MidleBar() {
     return (
-        <div className="text-white backdrop-blur-md px-1 py-10 md:p-10 rounded-lg relative">
+        <div className="text-white flex flex-col items-center gap-2 backdrop-blur-md px-3 py-10 md:p-10 rounded-lg relative">
             <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-full flex justify-center">
                 <motion.div
                     animate={{ rotate: [0, 10, -10, 0] }}
@@ -22,13 +23,16 @@ export default function MidleBar() {
                     />
                 </motion.div>
             </div>
-
             <div className=" -z-10 absolute top-0 left-0 bg-white w-full h-full bg-opacity-20 rounded-lg"></div>
-            <h1 className="mb-2 text-2xl uppercase">
-                Velkommen til <b className=" text-red-400">Tarbush</b> Resturant
+            <h1
+                className={`${rubik.className} bg-red-400 text-nowrap font-extrabold text-4xl  md:text-6xl uppercase mt-6 md:mt-12`}
+            >
+                Velkommen til
             </h1>
-            <h2 className="mb-6 text-xl font-thin">
-                Så hyggelig å se at dere er her!
+            <h2
+                className={`${rubik.className} font-extrabold w-fit trabold text-red-400 bg-white mb-4 text-4xl md:text-6xl uppercase`}
+            >
+                Tarbush
             </h2>
             <Link
                 href="/meny"

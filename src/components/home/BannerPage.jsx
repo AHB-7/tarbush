@@ -5,7 +5,7 @@ export default function BannerPage() {
     return (
         <>
             <div
-                className="-z-10 absolute h-screen min-h-[40rem] w-screen bg-cover bg-center bg-no-repeat filter brightness-50"
+                className="-z-10 absolute h-screen min-h-[40rem] w-screen bg-cover bg-center bg-no-repeat filter brightness-50 saturate-0"
                 style={{
                     backgroundImage: `url(/images/grillmatt.webp)`,
                 }}
