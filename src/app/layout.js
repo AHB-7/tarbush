@@ -4,7 +4,7 @@ import { montserrat } from "../ui/font";
 import Head from "next/head";
 
 export const metadata = {
-    title: "Beste Midtøsten- og Asia-mat i Trondheim",
+    title: "Tarbush Restaurant - Vi lover deg en opplevelse Restaurant i Trondheim",
     description:
         "Oppdag spesialtilbudet på Tarbush Restaurant i Trondheim. Vi er dedikert til å tjene deg på best mulig måte. Ta en titt på vår meny og bestill dine favorittretter fra Midtøsten og Asia i dag!",
     keywords: [
