@@ -30,13 +30,13 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
             href: "/meny",
         },
         {
-            title: "Event",
-            href: "/event",
+            title: "Kontakt",
+            href: "/kontakt",
         },
-        {
-            title: "Om...",
-            href: "/om",
-        },
+        // {
+        //     title: "Om...",
+        //     href: "/om",
+        // },
     ];
 
     return (
@@ -76,7 +76,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     ))}
                 </div>
             </div>
-            <div className="flex gap-2 pl-16 pt-4 mb-auto">
+            {/* <div className="flex gap-2 pl-16 pt-4 mb-auto">
                 <Link
                     href="/leie"
                     className={clsx(
@@ -107,8 +107,8 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                 >
                     Blog
                 </Link>
-            </div>
-            <div className=" bottom-8">
+            </div> */}
+            {/* <div className=" bottom-8 mt-auto">
                 <h3 className="text-md font-bold text-center text-gray-400">
                     Social Media
                 </h3>
@@ -150,7 +150,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                         <FaYelp />
                     </Link>
                 </div>
-            </div>
+            </div> */}
             <div className="mt-auto">
                 <p className="text-xs text-gray-400 text-center w-44 mx-auto py-4">
                     © 2024 Tarbush Restaurant. All rights reserved.
