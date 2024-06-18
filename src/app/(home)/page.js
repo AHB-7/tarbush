@@ -2,7 +2,8 @@
 
 import { bannerSection } from "../../services/index";
 import { useEffect, useState } from "react";
-import BannerPage from "../../components/home/BannerPage";
+import BannerPage from "../../components/home/sectionone/BannerPage";
+import SectionTwo from "@/components/home/sectiontwo/sectionTwo";
 
 export default function Home() {
     const [data, setData] = useState();
@@ -17,7 +18,7 @@ export default function Home() {
     return (
         <>
             <BannerPage data={data?.banners[0]} />
-            {/* <Countdown /> */}
+            <SectionTwo />
         </>
     );
 }

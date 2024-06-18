@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { rubik } from "../../ui/font";
 
 export default function MidleBar() {
     return (
@@ -33,7 +32,7 @@ export default function MidleBar() {
                 className="bg-white mb-4 rounded-lg p-4"
             >
                 <h1
-                    className={`${rubik.className} text-red-600 text-nowrap font-extrabold text-3xl sm:text-5xl md:text-6xl uppercase`}
+                    className={` text-red-600 text-nowrap font-extrabold text-3xl sm:text-5xl md:text-6xl uppercase`}
                 >
                     Velkommen til
                 </h1>
@@ -48,7 +47,7 @@ export default function MidleBar() {
                 className="bg-red-500 text-white mb-4 p-2 rounded-lg"
             >
                 <h2
-                    className={`${rubik.className} font-extrabold w-fit trabold text-brand-400 text-3xl sm:text-5xl md:text-6xl uppercase`}
+                    className={`font-extrabold w-fit trabold text-brand-400 text-3xl sm:text-5xl md:text-6xl uppercase`}
                 >
                     Tarbush
                 </h2>
@@ -60,6 +59,7 @@ export default function MidleBar() {
                     ease: "easeInOut",
                     delay: 1,
                 }}
+                className="pt-2"
             >
                 <Link
                     href="/meny"
