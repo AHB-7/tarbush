@@ -23,45 +23,51 @@ export default function MidleBar() {
                     />
                 </motion.div>
             </div>
-            {/* <div className="bg-red-200 -z-10 absolute top-0 left-0 bg-brand w-full h-full bg-opacity-20 rounded-lg"></div> */}
-            <div className="bg-red-600 mb-4 rounded-lg p-4">
+            <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                    delay: 0.3,
+                }}
+                className="bg-white mb-4 rounded-lg p-4"
+            >
                 <h1
-                    className={`${rubik.className} text-nowrap font-extrabold text-4xl md:text-6xl uppercase`}
+                    className={`${rubik.className} text-red-600 text-nowrap font-extrabold text-3xl sm:text-5xl md:text-6xl uppercase`}
                 >
                     Velkommen til
                 </h1>
-            </div>
-            <div className="bg-white text-red-600 mb-4 p-2 rounded-lg">
+            </motion.div>
+            <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                    delay: 0.6,
+                }}
+                className="bg-red-500 text-white mb-4 p-2 rounded-lg"
+            >
                 <h2
-                    className={`${rubik.className} font-extrabold w-fit trabold text-brand-400 text-4xl md:text-6xl uppercase`}
+                    className={`${rubik.className} font-extrabold w-fit trabold text-brand-400 text-3xl sm:text-5xl md:text-6xl uppercase`}
                 >
                     Tarbush
                 </h2>
-            </div>
-
-            <Link
-                href="/meny"
-                className="bg-gradient-to-b from-zinc-900 to-black shadow-md shadow-zinc-700 rounded-md transition-all duration-300 px-6 py-2"
+            </motion.div>
+            <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                    delay: 1,
+                }}
             >
-                Vår Meny
-            </Link>
-            {/* <div className=" -z-10 absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full flex justify-center">
-                <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 2,
-                        ease: "easeInOut",
-                    }}
+                <Link
+                    href="/meny"
+                    className="bg-gradient-to-b text-black from-white to-slate-300 shadow-md shadow-zinc-800 hover:shadow-none hover:scale-105 rounded-md transition-all duration-300 px-6 py-2 hover:text-white hover:bg-gradient-to-b hover:from-red-600 hover:to-red-600 focus:text-white focus:bg-gradient-to-b focus:from-red-700 focus:to-red-900 focus:border-white focus:border"
                 >
-                    <Image
-                        src="/images/bart.png"
-                        alt="the tarbush of trondheim"
-                        width={200}
-                        height={50}
-                    />
-                </motion.div>
-            </div> */}
+                    Vår Meny
+                </Link>
+            </motion.div>
         </div>
     );
 }
