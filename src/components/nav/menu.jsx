@@ -7,7 +7,8 @@ import { menuSlide, slideIt } from "../../func/navanimation";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import Image from "next/image";
+
+import SosiaclMedia from "./socialMedia";
 
 const Menu = React.forwardRef(({ setActive }, ref) => {
     const pathname = usePathname();
@@ -32,7 +33,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
             animate="enter"
             exit="exit"
             initial="initial"
-            className={menuStyle.menue}
+            className="h-screen max-w-[20rem] fixed top-0 right-0 bg-gradient-to-b from-brand-dark-950 to-brand-dark-900 z-10"
             ref={ref}
         >
             <div className={menuStyle.body}>
@@ -94,15 +95,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-end gap-2">
-                <Image
-                    src="/images/logo-circle.png"
-                    alt="logo image"
-                    className="size-24 backdrop-saturate-50"
-                    width="40"
-                    height="40"
-                />
-            </div>
+            <SosiaclMedia />
         </motion.div>
     );
 });

@@ -1,4 +1,4 @@
-import { Bellota, Roboto, Montserrat } from "next/font/google";
+import { Bellota, Roboto, Montserrat, Rubik } from "next/font/google";
 
 export const roboto = Roboto({
     subsets: ["latin"],
@@ -12,6 +12,11 @@ export const bellota = Bellota({
 });
 
 export const montserrat = Montserrat({
+    weights: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    display: "swap",
+    subsets: ["latin"],
+});
+export const rubik = Rubik({
     weights: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
     display: "swap",
     subsets: ["latin"],

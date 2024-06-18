@@ -20,7 +20,11 @@ export default function OpningsTimes() {
                 </li>
                 <li className=" w-full flex justify-between">
                     <h3 className="">Fredag</h3>
-                    <h3>14:00-22:00</h3>
+                    <h3>14:00-23:00</h3>
+                </li>
+                <li className=" w-full flex justify-between">
+                    <h3 className="">Lørdag</h3>
+                    <h3>14:00-23:00</h3>
                 </li>
                 <li className=" w-full flex justify-between">
                     <h3 className="">Søndag</h3>
