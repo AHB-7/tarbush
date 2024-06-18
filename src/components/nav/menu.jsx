@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-import SosiaclMedia from "./socialMedia";
 import {
     FaFacebookSquare,
     FaInstagram,
@@ -28,10 +27,6 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
         {
             title: "Meny",
             href: "/meny",
-        },
-        {
-            title: "Event",
-            href: "/event",
         },
         {
             title: "Om...",
@@ -54,21 +49,21 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                         Navigation
                     </p>
                     {navItems.map((item, index) => (
-                        <Link href={`${item.href}`} key={index}>
+                        <Link href={item.href} key={index}>
                             <motion.p
                                 variants={slideIt}
                                 custom={index}
                                 initial="initial"
                                 animate="enter"
                                 exit="exit"
+                                onClick={() => setActive(false)}
                                 className={clsx(
-                                    `hover:text-red-500 tracking-wider transition-colors duration-300 py-2 text-4xl font-extrabold ${
+                                    `tracking-wider hover:text-red-500 transition-colors duration-300 py-2 text-4xl font-extrabold ${
                                         pathname === item.href
                                             ? "text-red-500"
-                                            : ""
+                                            : "text-white"
                                     }`
                                 )}
-                                onClick={() => setActive(false)}
                             >
                                 {item.title}
                             </motion.p>
@@ -112,7 +107,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                 <h3 className="text-md font-bold text-center text-gray-400">
                     Social Media
                 </h3>
-                <div className="flex justify-center items-end gap-2 text-xl border-t border-b mx-12 py-2">
+                <div className="text-white flex justify-center items-end gap-2 text-xl border-t border-b mx-12 py-2">
                     <Link
                         className=" hover:text-green-500 transition-all duration-300"
                         href="https://www.tiktok.com/@tarbush.restaurant"
