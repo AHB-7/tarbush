@@ -43,3 +43,58 @@ export async function menyItems(limit = 50) {
     const res = await graphQL.request(query, { limit });
     return res;
 }
+// api.js
+
+export async function createFeedItem(title, content, stars, feedbackName) {
+    const mutation = gql`
+        mutation CreateFeedBack(
+            $title: String!
+            $content: String!
+            $stars: Float!
+            $feedbackName: String!
+        ) {
+            createFeedBack(
+                data: {
+                    title: $title
+                    content: $content
+                    stars: $stars
+                    feedbackName: $feedbackName
+                }
+            ) {
+                id
+                title
+                content
+                stars
+                feedbackName
+                createdAt
+            }
+        }
+    `;
+    const variables = {
+        title,
+        content,
+        stars: parseFloat(stars),
+        feedbackName,
+    };
+    const res = await graphQL.request(mutation, variables);
+    return res.createFeedBack;
+}
+
+export async function fetchFeedItems() {
+    const query = gql`
+        query GetFeedItems {
+            feedBacks(stage: DRAFT, orderBy: publishedAt_DESC, first: 5) {
+                id
+                stars
+                createdAt
+                content
+                feedbackName
+            }
+        }
+    `;
+    const res = await graphQL.request(query);
+    return res.feedBacks.map((item) => ({
+        ...item,
+        stars: item.stars !== undefined ? item.stars : 0,
+    }));
+}

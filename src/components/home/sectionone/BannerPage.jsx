@@ -1,5 +1,4 @@
 import Box from "./boxes";
-import BanneImages from "./Imges";
 import MidleBar from "./midleContent";
 
 export default function BannerPage() {

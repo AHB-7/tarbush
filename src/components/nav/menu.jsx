@@ -81,7 +81,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     )}
                 >
                     Leie locale
-                </Link>{" "}
+                </Link>
                 <Link
                     href="/event"
                     className={clsx(
@@ -91,7 +91,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     )}
                 >
                     Event
-                </Link>{" "}
+                </Link>
                 <Link
                     href="/blog"
                     className={clsx(
