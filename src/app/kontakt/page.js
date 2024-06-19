@@ -1,4 +1,4 @@
-import OpningsTimes from "@/components/kontakt/opningstimes";
+import OpningsTimes from "../../components/kontakt/opningstimes";
 import ContactClient from "../../components/kontakt/kontakt-client";
 
 export const metadata = {

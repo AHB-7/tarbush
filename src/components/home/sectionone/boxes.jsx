@@ -1,32 +1,36 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaMapMarkedAlt } from "react-icons/fa";
-import { MdCall } from "react-icons/md";
+import { MdArticle, MdCall } from "react-icons/md";
 
 export default function Box() {
     return (
         <motion.div
-            className="flex gap-2 md:gap-8 mt-0 md:mt-auto mb-0 md:mb-10"
-            animate={{ opacity: [0, 1] }}
+            className="flex justify-center items-center gap-2"
+            animate={{ opacity: [0, 1], translateY: [100, 0] }}
             transition={{
-                duration: 1,
+                duration: 0.4,
                 ease: "easeInOut",
-                delay: 1.5,
+                delay: 0.6,
             }}
         >
             <Link
                 href="/adresse"
-                className="flex flex-col justify-center items-center gap-1 size-28 rounded-md bg-red-500 bg-opacity-60 text-white hover:text-red-500 hover:bg-white transition-all duration-300 focus:text-red-500 focus:bg-white focus:border-red-500 focus:border"
+                className="flex flex-col justify-center items-center rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-2 transition-all duration-300 ease-in-out"
             >
-                <FaMapMarkedAlt className=" text-4xl" />
-                <p className=" font-semibold text-xl">Finn Oss</p>
+                <FaMapMarkedAlt className="text-xl" />
+            </Link>
+            <Link
+                href="/kontakt"
+                className="flex flex-col justify-center items-center  rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-2 transition-all duration-300 ease-in-out"
+            >
+                <MdCall className="text-xl" />
             </Link>{" "}
             <Link
                 href="/kontakt"
-                className="flex flex-col justify-center items-center gap-1 size-28 rounded-md bg-red-500 bg-opacity-60 text-white hover:text-red-500 hover:bg-white transition-all duration-300 focus:text-red-500 focus:bg-white focus:border-red-500 focus:border"
+                className="flex flex-col justify-center items-center  rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-2 transition-all duration-300 ease-in-out"
             >
-                <MdCall className=" text-4xl" />
-                <p className=" font-semibold text-xl ">Ring Oss</p>
+                <MdArticle className="text-xl" />
             </Link>
         </motion.div>
     );

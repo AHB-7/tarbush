@@ -4,6 +4,8 @@ const nextConfig = {
         domains: [
             "media.graphassets.com",
             "eu-central-1-shared-euc1-02.graphassets.com",
+            "upload.wikimedia.org",
+            "download.logo.wine",
         ],
     },
 };

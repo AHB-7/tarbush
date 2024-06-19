@@ -35,6 +35,7 @@ const Star = ({ filled, onClick }) => (
             cursor: "pointer",
             color: filled ? "red" : "gray",
             fontSize: "40px",
+            margin: "15px 0  15px 0",
             transition: "color 0.2s ease-in-out, transform 0.2s ease-in-out",
         }}
         onMouseOver={(e) => (
