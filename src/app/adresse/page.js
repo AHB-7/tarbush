@@ -2,51 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { BsPinMap } from "react-icons/bs";
 import { FiMapPin } from "react-icons/fi";
-export const metadata = {
-    title: "Adresse",
-    description:
-        "Tarbush Restaurant ligger i Ivar Lykkes veg 4, 7075 Tiller. Kom og besøk oss i dag for å spise de beste maten laget med skjærlighet!",
-    keywords: [
-        "Trondheim",
-        "Trondlag",
-        "Triller",
-        "Hala Mat",
-        "Hala resturant",
-        "Hala",
-        "Tarbush Restaurant",
-        "Midtøsten-mat Trondheim",
-        "beste restaurant i Trondheim",
-        "spesialtilbud Tarbush",
-        "Middle Eastern cuisine",
-        "authentic Lebanese food",
-        "family restaurant Trondheim",
-        "dining in Tiller",
-        "Mediterranean dishes Trondheim",
-        "top-rated restaurant Trondheim",
-        "Halal food Trondheim",
-        "best Lebanese food Trondheim",
-        "fine dining Trondheim",
-        "traditional Middle Eastern dishes",
-        "Tarbush menu",
-        "Tarbush reviews",
-        "restaurant near me",
-        "Trondheim food delivery",
-        "Trondheim takeout",
-        "Lebanese dining experience",
-        "Trondheim lunch spots",
-        "Trondheim dinner spots",
-        "Tarbush special offers",
-        "catering Trondheim",
-    ],
-    author: "Tarbush Restaurant",
-    link: {
-        rel: "canonical",
-        href: "https://www.tarbush.no",
-    },
-    htmlAttributes: {
-        lang: "no",
-    },
-};
+
 export default function Page() {
     const address = "Ivar Lykkes veg 4, 7075 Tiller";
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(

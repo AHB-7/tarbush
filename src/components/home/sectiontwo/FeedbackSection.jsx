@@ -9,6 +9,14 @@ import Link from "next/link";
 import Loading from "../../loading";
 import FeedItemCarousel from "./FeedItemCarousel";
 
+const CharacterCounter = ({ currentLength, maxLength }) => {
+    return (
+        <p className="text-sm text-gray-400">
+            {currentLength}/{maxLength}
+        </p>
+    );
+};
+
 const FeedbackSection = () => {
     const [content, setContent] = useState("");
     const [stars, setStars] = useState(5);
@@ -43,14 +51,14 @@ const FeedbackSection = () => {
         let formErrors = {};
         if (!feedbackName) {
             formErrors.feedbackName = "Name is required.";
-        } else if (feedbackName.length < 7) {
-            formErrors.feedbackName = "Name must be at least 7 characters.";
+        } else if (feedbackName.length < 5) {
+            formErrors.feedbackName = "Name must be at least 5 characters.";
         }
 
         if (!content) {
             formErrors.content = "Content is required.";
-        } else if (content.length < 15) {
-            formErrors.content = "Content must be at least 7 characters.";
+        } else if (content.length < 100) {
+            formErrors.content = "Content must be at least 100 characters.";
         }
 
         if (stars < 1 || stars > 5) {
@@ -94,7 +102,7 @@ const FeedbackSection = () => {
     };
 
     return (
-        <div className="">
+        <div className="my-8">
             <div>
                 {feedItems.length > 0 ? (
                     <FeedItemCarousel feedItems={feedItems} />
@@ -102,12 +110,10 @@ const FeedbackSection = () => {
                     <p>No feed items available.</p>
                 )}
             </div>
-            <div className="relative flex flex-col justify-start items-start gap-3  shadow-lg rounded-lg p-5">
-                <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-b from-white via-black to-zinc-900 opacity-5 rounded-lg"></div>
-                <p className="text-md py-2">
-                    For at vi skal kunne forbedre oss, trenger vi din
-                    tilbakemelding. Vi setter pris på alle tilbakemeldinger, og
-                    vi vil gjøre vårt beste for å forbedre oss.
+            <div className="relative flex flex-col justify-center items-center gap-1">
+                <p className="text-center">
+                    Vi setter pris på alle tilbakemeldinger, og vi vil gjøre
+                    vårt beste for å forbedre oss.
                 </p>
                 <div className="flex flex-col w-full mt-4 items-center justify-center">
                     <button
@@ -178,7 +184,11 @@ const FeedbackSection = () => {
                                     onChange={(e) =>
                                         setFeedbackName(e.target.value)
                                     }
-                                    placeholder="Your Name"
+                                    placeholder="Ditt navn"
+                                />
+                                <CharacterCounter
+                                    currentLength={feedbackName.length}
+                                    maxLength={5}
                                 />
                                 {errors.feedbackName && (
                                     <p className="text-red-500 text-sm">
@@ -189,13 +199,17 @@ const FeedbackSection = () => {
 
                             <div>
                                 <span className="text-sm font-thin pt-4">
-                                    Tekst
+                                    Dine ord
                                 </span>
                                 <textarea
                                     value={content}
                                     className="bg-zinc-700 w-full p-2 border-none rounded-md focus:bg-zinc-800 focus:outline-none"
                                     onChange={(e) => setContent(e.target.value)}
                                     placeholder="Skriv her"
+                                />
+                                <CharacterCounter
+                                    currentLength={content.length}
+                                    maxLength={100}
                                 />
                                 {errors.content && (
                                     <p className="text-red-500 text-sm">

@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { IoMdQuote } from "react-icons/io";
 import { MdFormatQuote } from "react-icons/md";
+import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 const FeedItemCarousel = ({ feedItems }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,7 +38,7 @@ const FeedItemCarousel = ({ feedItems }) => {
         <div id="default-carousel" className="" data-carousel="slide">
             {feedItems.length > 0 && (
                 <>
-                    <div className="">
+                    <div className=" h-64">
                         {feedItems.map((item, index) => (
                             <div
                                 key={item.id}
@@ -46,47 +47,67 @@ const FeedItemCarousel = ({ feedItems }) => {
                                 }`}
                                 data-carousel-item
                             >
-                                <div className="max-w-[36rem] flex items-center justify-center flex-col">
-                                    <p className="italic text-center relative">
-                                        <IoMdQuote className="text-4xl absolute -ms-10 -mt-4" />
-                                        {item.content}{" "}
+                                <div className="max-w-[36rem] flex items-center justify-center flex-col min-h-[10rem]">
+                                    <p className="italic text-center relative px-3">
+                                        <IoMdQuote className="text-xl absolute -ms-4 md:-ms-10 -mt-4" />
+                                        {item.content}
                                     </p>
-                                    <div className="max-w-[36rem] font-thin ms-auto me-4 mt-5">
-                                        <p className=" text-gray-300">
+
+                                    <div className="max-w-[36rem] font-thin ms-auto mt-2">
+                                        <p className=" text-gray-300 text-end">
                                             {item.feedbackName}
                                         </p>
-                                        <p className="text-gray-300">
+                                        <p className="text-gray-300 text-xs text-end">
                                             {new Date(
                                                 item.createdAt
-                                            ).toLocaleString()}
+                                            ).toLocaleDateString()}
                                         </p>
                                     </div>
-                                    <p className="">
+                                    <p className="py-3 mt-1">
                                         <StarDisplay rating={item.stars} />
                                     </p>
+                                </div>
+                                <div className="flex items-center justify-center w-full gap-4">
+                                    {feedItems.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            type="button"
+                                            className={`w-1/5 justify-center flex items-center h-1 ${
+                                                index === currentIndex
+                                                    ? "bg-white"
+                                                    : "bg-gray-500"
+                                            }`}
+                                            aria-current={
+                                                index === currentIndex
+                                            }
+                                            aria-label={`Slide ${index + 1}`}
+                                            onClick={() =>
+                                                setCurrentIndex(index)
+                                            }
+                                        ></button>
+                                    ))}
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    <div className="flex justify-center items-center mx-auto max-w-[12rem]">
+                    {/* <div className="flex justify-center items-center mx-auto max-w-[12rem]">
                         <button
                             type="button"
                             className="z-30 me-auto"
                             data-carousel-prev
                             onClick={handlePrev}
                         >
-                            <FaChevronLeft />
+                            <FaCircleChevronLeft className="text-2xl text-white" />
                         </button>
-                        <div className=" z-30 ">
+                        <div className=" z-30 flex justify-center align-middle max-w-[36rem]">
                             {feedItems.map((_, index) => (
                                 <button
                                     key={index}
                                     type="button"
-                                    className={`w-3 h-3 rounded-full ${
+                                    className={` min-w-[14rem] flex items-center h-1 rounded-full ${
                                         index === currentIndex
-                                            ? "bg-red-700"
-                                            : "bg-red-100"
+                                            ? "bg-white"
+                                            : "bg-gray-500"
                                     }`}
                                     aria-current={index === currentIndex}
                                     aria-label={`Slide ${index + 1}`}
@@ -94,16 +115,15 @@ const FeedItemCarousel = ({ feedItems }) => {
                                 ></button>
                             ))}
                         </div>
-
                         <button
                             type="button"
                             className="z-30 ms-auto"
                             data-carousel-next
                             onClick={handleNext}
                         >
-                            <FaChevronRight />
+                            <FaCircleChevronRight className="text-2xl text-white" />
                         </button>
-                    </div>
+                    </div> */}
                 </>
             )}
         </div>

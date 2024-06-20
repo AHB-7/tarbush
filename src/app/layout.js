@@ -1,7 +1,6 @@
-import Script from "next/script";
 import Navbar from "../components/nav/nav";
 import "../styles/globals.css";
-import { montserrat, rubik } from "../ui/font";
+import { rubik } from "../ui/font";
 import Head from "next/head";
 
 export const metadata = {
