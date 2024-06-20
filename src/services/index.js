@@ -45,24 +45,21 @@ export async function menyItems(limit = 50) {
 }
 // api.js
 
-export async function createFeedItem(title, content, stars, feedbackName) {
+export async function createFeedItem(content, stars, feedbackName) {
     const mutation = gql`
         mutation CreateFeedBack(
-            $title: String!
             $content: String!
             $stars: Float!
             $feedbackName: String!
         ) {
             createFeedBack(
                 data: {
-                    title: $title
                     content: $content
                     stars: $stars
                     feedbackName: $feedbackName
                 }
             ) {
                 id
-                title
                 content
                 stars
                 feedbackName
@@ -71,7 +68,6 @@ export async function createFeedItem(title, content, stars, feedbackName) {
         }
     `;
     const variables = {
-        title,
         content,
         stars: parseFloat(stars),
         feedbackName,
