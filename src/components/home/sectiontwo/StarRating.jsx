@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillHeart } from "react-icons/ai";
-import { FaHeart } from "react-icons/fa";
 
 const StarRating = ({ rating, setRating }) => {
     const handleClick = (value) => {

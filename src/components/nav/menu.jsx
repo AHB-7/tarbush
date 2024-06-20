@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import menuStyle from "../../styles/nav.module.css";
 import Link from "next/link";
 import { menuSlide, slideIt } from "../../func/navanimation";
 import { motion } from "framer-motion";

@@ -1,4 +1,4 @@
-import Opning from "@/components/events/opning";
+import Opning from ".././../components/events/opning";
 
 export const metadata = {
     title: "Kontakt",

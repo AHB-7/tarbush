@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
 import StarDisplay from "./StarDisplay";
-import {
-    FaChevronLeft,
-    FaChevronRight,
-    FaGripLinesVertical,
-} from "react-icons/fa";
 import { IoMdQuote } from "react-icons/io";
-import { MdFormatQuote } from "react-icons/md";
-import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
 const FeedItemCarousel = ({ feedItems }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,7 +42,7 @@ const FeedItemCarousel = ({ feedItems }) => {
                             >
                                 <div className="max-w-[36rem] flex items-center justify-center flex-col min-h-[10rem]">
                                     <p className="italic text-center relative px-3">
-                                        <IoMdQuote className="text-xl absolute -ms-4 md:-ms-10 -mt-4" />
+                                        <IoMdQuote className="text-xl" />
                                         {item.content}
                                     </p>
 

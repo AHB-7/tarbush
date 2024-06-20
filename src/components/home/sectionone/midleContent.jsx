@@ -51,7 +51,7 @@ export default function MidleBar() {
             >
                 <Link
                     href="/meny"
-                    className="px-7 relative text uppercase py-2 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none hover:scale-105 rounded-md transition-all duration-300  hover:text-white hover:bg-red-600 focus:text-white focus:bg-gradient-to-b focus:from-red-700 focus:to-red-900 focus:border-white focus:border"
+                    className="px-7 relative text uppercase py-2 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
                 >
                     <div className="h-5 w-5 bg-red-500 absolute -right-2 -top-2 rounded-full animate-ping -z-10"></div>
                     Vår Meny
