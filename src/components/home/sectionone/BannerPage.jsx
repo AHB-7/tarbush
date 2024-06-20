@@ -6,13 +6,13 @@ import React from "react";
 export default function BannerPage() {
     return (
         <header className="overflow-x-hidden h-full w-full">
-            <div
-                className="-z-10 absolute h-screen w-full bg-fixed bg-cover bg-center bg-no-repeat filter brightness-50 saturate-0"
-                style={{
-                    backgroundImage: `url(/images/grillmatt.webp)`,
-                }}
-            ></div>
             <div className="h-screen flex items-center justify-center text-center flex-col">
+                <div
+                    className="-z-10 absolute h-screen w-full bg-fixed bg-cover bg-center bg-no-repeat filter brightness-50 saturate-0"
+                    style={{
+                        backgroundImage: `url(/images/grillmatt.webp)`,
+                    }}
+                ></div>
                 <div className="mt-auto">
                     <div className="mb-6">
                         <MidleBar />

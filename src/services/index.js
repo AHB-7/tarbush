@@ -4,24 +4,44 @@ import { GraphQLClient, gql } from "graphql-request";
 
 const graphQL = new GraphQLClient(api_URL);
 
-export async function bannerSection() {
+export async function fetchGallery() {
     const query = gql`
-        query banner {
-            banners {
-                description
-                heading
-                heroBtn
-                bannerImage {
+        query getGallery {
+            galleries(first: 9, orderBy: publishedAt_DESC, stage: PUBLISHED) {
+                id
+                publishedAt
+                text
+                title
+                resImage {
                     url
                 }
             }
         }
     `;
     const res = await graphQL.request(query);
-    return res;
+    return res.galleries;
 }
 
-export async function menyItems(limit = 50) {
+export async function fetchGalleryById(id) {
+    const query = gql`
+        query getGalleryById($id: ID!) {
+            gallery(where: { id: $id }) {
+                id
+                publishedAt
+                text
+                title
+                resImage {
+                    url
+                }
+            }
+        }
+    `;
+    const variables = { id };
+    const res = await graphQL.request(query, variables);
+    return res.gallery;
+}
+
+export async function menyItems(limit = 100) {
     const query = gql`
         query menyItems($limit: Int!) {
             menies(first: $limit) {

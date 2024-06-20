@@ -27,7 +27,6 @@ export default function Page() {
                 >
                     <FeedbackSection />
                 </motion.div>
-                );
             </div>
         </>
     );

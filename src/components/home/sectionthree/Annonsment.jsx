@@ -10,8 +10,8 @@ export default function Anonsment() {
                 Lunsj servering!
             </span>
             <p className="py-8 font-normal text-center">
-                Fra starten av den 24.06.2024 vil vi servere lunsj fra kl 11:00
-                til kl 12:00. Vi gleder oss til å se dere!
+                Fra og med den 24.06.2024 vil vi servere lunsj fra kl 11:00 til
+                kl 14:00. Vi gleder oss til å se dere!
             </p>
             <Link
                 href="/meny"

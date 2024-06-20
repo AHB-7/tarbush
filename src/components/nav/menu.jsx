@@ -82,14 +82,14 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     Leie locale
                 </Link>
                 <Link
-                    href="/event"
+                    href="/events"
                     className={clsx(
                         `hover:text-red-500 transition-colors text-sm text-gray-400 font-extrabold duration-300 ${
-                            pathname === "/event" ? "text-red-500" : ""
+                            pathname === "/events" ? "text-red-500" : ""
                         }`
                     )}
                 >
-                    Event
+                    Events
                 </Link>
                 <Link
                     href="/blog"
