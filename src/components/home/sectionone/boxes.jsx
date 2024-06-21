@@ -16,14 +16,14 @@ export default function Box() {
         >
             <Link
                 href="/adresse"
-                className="flex flex-col justify-center items-center rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-2 transition-all duration-300 ease-in-out"
+                className="flex flex-col justify-center items-center rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-3 transition-all duration-300 ease-in-out "
             >
                 <p className=" hidden"> Adresse </p>
                 <FaMapMarkedAlt className="text-xl" />
             </Link>
             <Link
                 href="/kontakt"
-                className="flex flex-col justify-center items-center  rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-2 transition-all duration-300 ease-in-out"
+                className="flex flex-col justify-center items-center  rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-3 transition-all duration-300 ease-in-out"
             >
                 {" "}
                 <p className=" hidden"> Kontakt </p>
@@ -31,7 +31,7 @@ export default function Box() {
             </Link>
             <Link
                 href="/blog"
-                className="flex flex-col justify-center items-center  rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-2 transition-all duration-300 ease-in-out"
+                className="flex flex-col justify-center items-center  rounded-full border-red-500 bg-red-500 hover:bg-white hover:text-red-500  bg-opacity-80 p-3 transition-all duration-300 ease-in-out"
             >
                 <p className=" hidden"> Blog </p>{" "}
                 <MdArticle className="text-xl" />
