@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import Link from "next/link";
+import Loading from "../loading";
 
 const GalleryDetailPage = ({ params }) => {
     const { id } = params;
@@ -24,11 +25,11 @@ const GalleryDetailPage = ({ params }) => {
     }, [id]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loading className="h-screen" />;
     }
 
     if (!gallery) {
-        return <div>Gallery not found</div>;
+        return <div className="h-screen">Gallery not found</div>;
     }
 
     const formattedDate = new Date(gallery.publishedAt).toLocaleDateString();
@@ -42,24 +43,27 @@ const GalleryDetailPage = ({ params }) => {
                 }}
             ></div>
             <div className="mx-auto px-4 gap-4 container w-11/12 md:w-7/12 md:p-0 md:pb-3 flex flex-col items-center justify-center">
-                <Swiper
-                    effect={"cards"}
-                    grabCursor={true}
-                    modules={[EffectCards]}
-                    className="w-full mx-auto mt-24 max-h-[30rem] lg:h-[30rem]"
-                >
-                    {gallery.resImage.map((image, index) => (
-                        <SwiperSlide key={index} className="shadow-none">
-                            <Image
-                                src={image.url}
-                                alt={`${gallery.title} image ${index + 1}`}
-                                width={500}
-                                height={500}
-                                layout="responsive"
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                <div className=" w-screen px-12 md:w-10/12">
+                    <Swiper
+                        effect={"cards"}
+                        grabCursor={true}
+                        modules={[EffectCards]}
+                        className="w-full mt-24 max-h-[30rem] lg:h-[30rem] "
+                    >
+                        {gallery.resImage.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <Image
+                                    src={image.url}
+                                    alt={`${gallery.title} image ${index + 1}`}
+                                    width={500}
+                                    height={500}
+                                    className="mx-0"
+                                    layout="responsive"
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
                 <p className="self-end font-thin text-xs">
                     Publisert: {formattedDate}
                 </p>

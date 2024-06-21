@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Loading() {
     return (
-        <div className="flex h-full w-full justify-center items-center flex-col">
+        <div className="flex h-screen w-full justify-center items-center flex-col">
             <div className="pb-4">
                 <p variant="h3">Gi oss et skekund</p>
             </div>
