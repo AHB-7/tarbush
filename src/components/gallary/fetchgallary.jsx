@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
+import Link from "next/link";
 
 const GalleryDetailPage = ({ params }) => {
     const { id } = params;
@@ -40,15 +41,15 @@ const GalleryDetailPage = ({ params }) => {
                     backgroundImage: `url(${gallery.resImage[0].url})`,
                 }}
             ></div>
-            <div className="mx-auto gap-4 container w-9/12 md:w-7/12 h-full overflow-hidden px-1 py-12 md:p-20 flex flex-col items-center justify-center">
+            <div className="mx-auto px-4 gap-4 container w-11/12 md:w-7/12 md:p-0 md:pb-3 flex flex-col items-center justify-center">
                 <Swiper
                     effect={"cards"}
                     grabCursor={true}
                     modules={[EffectCards]}
-                    className="w-full mx-auto"
+                    className="w-full mx-auto mt-24 max-h-[30rem] lg:h-[30rem]"
                 >
                     {gallery.resImage.map((image, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className="shadow-none">
                             <Image
                                 src={image.url}
                                 alt={`${gallery.title} image ${index + 1}`}
@@ -62,25 +63,36 @@ const GalleryDetailPage = ({ params }) => {
                 <p className="self-end font-thin text-xs">
                     Publisert: {formattedDate}
                 </p>
-                <h1 className="text-2xl md:text-4xl bg-red-500 p-3 rounded-lg mt-3">
-                    {gallery.title}
-                </h1>
-                <p className="self-start font-thin">
-                    {gallery.text} Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Quae explicabo quod soluta in impedit
-                    fugit saepe? Eveniet voluptates distinctio dolor fugiat a
-                    adipisci vitae, veniam soluta maxime! Necessitatibus, facere
-                    obcaecati. adipisicing elit. Quae explicabo quod soluta in
-                    impedit fugit saepe? Eveniet voluptates distinctio dolor
-                    fugiat a adipisci vitae, veniam soluta maxime!
-                    Necessitatibus, facere obcaecati. adipisicing elit. Quae
-                    explicabo quod soluta in impedit fugit saepe? Eveniet
-                    voluptates distinctio dolor fugiat a adipisci vitae, veniam
-                    soluta maxime! Necessitatibus, facere obcaecati. adipisicing
-                    elit. Quae explicabo quod soluta in impedit fugit saepe?
-                    Eveniet voluptates distinctio dolor fugiat a adipisci vitae,
-                    veniam soluta maxime! Necessitatibus, facere obcaecati.
-                </p>
+                <div className="bg-zinc-900 bg-opacity-80 flex flex-col p-2 rounded-md pt-14">
+                    <h1 className="text-2xl self-start md:text-3xl bg-white font-bold text-red-500 p-2 rounded-lg my-2">
+                        {gallery.title}
+                    </h1>
+                    <p className="self-start font-thin text-justify py-4">
+                        {gallery.text} Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quae explicabo quod soluta in impedit
+                        fugit saepe? Eveniet voluptates distinctio dolor fugiat
+                        a adipisci vitae, veniam soluta maxime! Necessitatibus,
+                        facere obcaecati. adipisicing elit. Quae explicabo quod
+                        soluta in impedit fugit saepe? Eveniet voluptates
+                        distinctio dolor fugiat a adipisci vitae, veniam soluta
+                        maxime! Necessitatibus, facere obcaecati. adipisicing
+                        elit. Quae explicabo quod soluta in impedit fugit saepe?
+                        Eveniet voluptates distinctio dolor fugiat a adipisci
+                        vitae, veniam soluta maxime! Necessitatibus, facere
+                        obcaecati. adipisicing elit. Quae explicabo quod soluta
+                        in impedit fugit saepe? Eveniet voluptates distinctio
+                        dolor fugiat a adipisci vitae, veniam soluta maxime!
+                        Necessitatibus, facere obcaecati.
+                    </p>
+                    <div className="text-center my-14">
+                        <Link
+                            href="/blog"
+                            className="px-7 font-normal relative text uppercase py-2.5 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
+                        >
+                            Andre gallerier
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     );

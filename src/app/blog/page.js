@@ -19,7 +19,7 @@ const GalleryPage = async () => {
                 </p>
                 <Link
                     href="/kontakt"
-                    className=" mb-6 px-7 relative text uppercase py-2 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
+                    className=" mb-6 font-normal  px-7 relative text uppercase py-2.5 text-black bg-white shadow-sm shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
                 >
                     Kontakt oss for å dele
                 </Link>
