@@ -15,6 +15,7 @@ import {
     FaYelp,
 } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
+import Sosialemedier from "./socialMedia";
 
 const Menu = React.forwardRef(({ setActive }, ref) => {
     const pathname = usePathname();
@@ -102,49 +103,10 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     Blog
                 </Link>
             </div>
-            <div className=" bottom-8">
-                <h3 className="text-md font-bold text-center text-gray-400">
-                    Social Media
-                </h3>
-                <div className="text-white flex justify-center items-end gap-2 text-xl border-t border-b mx-12 py-2">
-                    <Link
-                        className=" hover:text-green-500 transition-all duration-300"
-                        href="https://www.tiktok.com/@tarbush.restaurant"
-                    >
-                        <FaTripadvisor />
-                    </Link>
-                    <Link
-                        className=" hover:text-blue-500 transition-all duration-300"
-                        href="https://www.facebook.com/profile.php?id=61559120927290"
-                    >
-                        <FaFacebookSquare />
-                    </Link>
-                    <Link
-                        className=" hover:text-orange-700 transition-all duration-300"
-                        href="https://www.instagram.com/tarbush___res/"
-                    >
-                        <FaInstagram />
-                    </Link>
-                    <Link
-                        className=" hover:text-red-500 transition-all duration-300"
-                        href="https://www.tiktok.com/@tarbush.restaurant"
-                    >
-                        <AiFillTikTok />
-                    </Link>
-                    <Link
-                        className=" hover:text-yellow-300 transition-all duration-300"
-                        href="https://www.tiktok.com/@tarbush.restaurant"
-                    >
-                        <FaSnapchatSquare />
-                    </Link>
-                    <Link
-                        className=" hover:text-red-500 transition-all duration-300"
-                        href="https://www.tiktok.com/@tarbush.restaurant"
-                    >
-                        <FaYelp />
-                    </Link>
-                </div>
-            </div>
+            <h3 className="text-md font-bold text-center text-gray-400">
+                Social Media
+            </h3>
+            <Sosialemedier />
             <div className="mt-auto">
                 <p className="text-xs text-gray-400 text-center w-44 mx-auto py-4">
                     © 2024 Tarbush Restaurant. All rights reserved.

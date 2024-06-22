@@ -18,4 +18,5 @@ body {
     );
     scrollbar-color: #1a1a1a #e5e5e5; /* thumb color and track color */
     scrollbar-width: thin; /* For Firefox */
+    height: 100%;
 }
