@@ -13,10 +13,10 @@ export default function MidleBar() {
                         ease: "easeInOut",
                         delay: 0.3,
                     }}
-                    className="bg-white text-red-500 mb-4 p-2 rounded-lg"
+                    className="bg-white text-red-500 mb-4 p-2  rounded-lg"
                 >
                     <h1
-                        className={`font-extrabold text-brand-400 text-4xl md:text-7xl uppercase`}
+                        className={`font-extrabold text-brand-400 text-4xl  md:first-letter:text-7xl first-letter:text-5xl text-justify md:text-7xl uppercase`}
                     >
                         Velkommen til
                     </h1>
@@ -34,7 +34,7 @@ export default function MidleBar() {
                     className="bg-red-500 text-white mb-4 p-2 rounded-lg"
                 >
                     <h2
-                        className={`font-extrabold text-brand-400 text-4xl md:text-7xl uppercase`}
+                        className={`font-extrabold text-brand-400 text-5xl md:text-7xl uppercase `}
                     >
                         Tarbush
                     </h2>
@@ -51,7 +51,7 @@ export default function MidleBar() {
             >
                 <Link
                     href="/meny"
-                    className="px-7 relative text uppercase py-2 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
+                    className="px-6 relative text uppercase py-2.5 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
                 >
                     <div className="h-5 w-5 bg-red-500 absolute -right-2 -top-2 rounded-full animate-ping -z-10"></div>
                     Vår Meny

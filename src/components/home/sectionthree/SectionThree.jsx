@@ -9,8 +9,8 @@ export default function SectionThree() {
     const isVisible = useIntersectionObserver(sectionRef);
 
     return (
-        <div className="relative">
-            <div className="flex items-center justify-center relative h-[55rem]">
+        <div className="relative flex items-center justify-center mx-auto md:py-4 py-12">
+            <div className="flex items-center justify-center h-[55rem]">
                 <div
                     className="-z-10 w-full absolute h-full bg-fixed bg-cover bg-center bg-no-repeat filter brightness-50 blur-sm saturate-1"
                     style={{
@@ -25,10 +25,12 @@ export default function SectionThree() {
                         y: isVisible ? 0 : 50,
                     }}
                     transition={{ duration: 0.5 }}
-                    className="container max-w-[60rem] flex items-center justify-center flex-wrap"
+                    className=" md:flex md:items-center md:justify-center md:gap-12"
                 >
                     <Anonsment />
-                    <OpningsTimes />
+                    <div className=" w-full flex items-center justify-center h-full">
+                        <OpningsTimes />
+                    </div>
                 </motion.div>
             </div>
         </div>
