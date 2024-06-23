@@ -146,7 +146,7 @@ const Meny = () => {
                                         className={`w-[20rem] grow border p-3 rounded-lg cursor-pointer transition-all duration-300 hover:shadow-sm hover:shadow-slate-300 `}
                                         onClick={() => handleDishClick(item)}
                                     >
-                                        <h2 className="text-lg py-2 border-b">
+                                        <h2 className="text-lg py-2 border-b uppercase">
                                             {item.dishName}
                                         </h2>
                                         <div className="flex justify-between py-2">

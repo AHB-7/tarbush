@@ -84,6 +84,11 @@ export const metadata = {
         "ARABISK KAFFE",
         "KAFFE",
         "VARM SJOKOLADE",
+        "طربوش تروندهايم",
+        "طربوش مطعم",
+        "طربوش",
+        "طربوش تروندهايم",
+        "مطعم عائلي",
     ],
     author: "Tarbush Restaurant",
     link: {

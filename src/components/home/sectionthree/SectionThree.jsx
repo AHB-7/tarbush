@@ -14,7 +14,7 @@ export default function SectionThree() {
                 <div
                     className="-z-10 w-full absolute h-full bg-fixed bg-cover bg-center bg-no-repeat filter brightness-50 blur-sm saturate-1"
                     style={{
-                        backgroundImage: `url(/images/resin.jpg)`,
+                        backgroundImage: `url(/images/lockal/resin.jpg)`,
                     }}
                 ></div>
                 <motion.div
