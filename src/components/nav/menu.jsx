@@ -9,6 +9,7 @@ import clsx from "clsx";
 
 import {
     FaFacebookSquare,
+    FaInfoCircle,
     FaInstagram,
     FaSnapchatSquare,
     FaTripadvisor,
@@ -16,6 +17,7 @@ import {
 } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
 import Sosialemedier from "./socialMedia";
+import { TfiInfo } from "react-icons/tfi";
 
 const Menu = React.forwardRef(({ setActive }, ref) => {
     const pathname = usePathname();
@@ -103,9 +105,19 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     Blog
                 </Link>
             </div>
+            <Link
+                href="/info"
+                className="flex items-center justify-center my-auto "
+            >
+                <div className=" border px-2 py-1 rounded-md font-extrabold flex items-start gap-2 justify-center">
+                    <p>Info</p>
+                    <FaInfoCircle className="text-xl animate-spin text-red-500" />
+                </div>
+            </Link>
             <h3 className="text-md font-bold text-center text-gray-400">
                 Social Media
             </h3>
+
             <Sosialemedier />
             <div className="mt-auto">
                 <p className="text-xs text-gray-400 text-center w-44 mx-auto py-4">
