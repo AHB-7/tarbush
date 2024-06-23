@@ -39,13 +39,14 @@ const HeroSection = () => {
                         konfirmasjoner, bryllup, firmafester, julebord, osv. For
                         mer informasjon, ta kontakt med oss.
                     </p>
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex justify-center flex-col">
                         <Link
-                            href="/meny"
+                            href="/info"
                             className="px-7 relative text uppercase py-2 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300 hover:text-white hover:bg-red-600"
                         >
                             Kontakt oss
                         </Link>
+                        {/* <p>epost: tarbushcm</p> */}
                     </div>
                 </div>
                 <div className="h-full w-full max-w-[30rem]">
