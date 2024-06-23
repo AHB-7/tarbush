@@ -71,7 +71,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/resin.jpg"
+                                    src="/images/lockal/lokal-0.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
@@ -82,7 +82,51 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/resin.jpg"
+                                    src="/images/lockal/lokal-1.jpg"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                    alt="Et felles bilde av hele teamet vårt i Tarbush Restaurant."
+                                />
+                            </div>
+                        </SwiperSlide>{" "}
+                        <SwiperSlide>
+                            <div className="relative h-96">
+                                <Image
+                                    src="/images/lockal/lokal-2.jpg"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                    alt="Et felles bilde av hele teamet vårt i Tarbush Restaurant."
+                                />
+                            </div>
+                        </SwiperSlide>{" "}
+                        <SwiperSlide>
+                            <div className="relative h-96">
+                                <Image
+                                    src="/images/lockal/lokal-3.jpg"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                    alt="Et felles bilde av hele teamet vårt i Tarbush Restaurant."
+                                />
+                            </div>
+                        </SwiperSlide>{" "}
+                        <SwiperSlide>
+                            <div className="relative h-96">
+                                <Image
+                                    src="/images/lockal/lokal-4.jpg"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                    alt="Et felles bilde av hele teamet vårt i Tarbush Restaurant."
+                                />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="relative h-96">
+                                <Image
+                                    src="/images/lockal/lokal.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
