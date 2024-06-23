@@ -149,14 +149,8 @@ export default function Page() {
                                 href="/info"
                                 className="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
                             >
-                                les mer om våre åpningstider
-                            </Link>
-                            eller finn oss på kartet.
-                            <Link
-                                href="/info"
-                                className="font-medium text-blue-600 underline dark:text-blue-500 hover:no-underline"
-                            >
-                                les mer om våre åpningstider
+                                les mer om våre åpningstider og hvor vi brfinner
+                                oss på kartet.
                             </Link>
                         </p>
                     </li>{" "}
