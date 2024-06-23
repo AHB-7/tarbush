@@ -34,6 +34,10 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
             title: "Om...",
             href: "/om",
         },
+        // {
+        //     title: "Om...",
+        //     href: "/om",
+        // },
     ];
 
     return (
@@ -42,6 +46,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
             animate="enter"
             exit="exit"
             initial="initial"
+            className="h-screen flex flex-col justify-between max-w-[20rem] fixed top-0 right-0 bg-zinc-950 z-10 pt-36 overflow-auto"
             className="h-screen flex flex-col justify-between max-w-[20rem] fixed top-0 right-0 bg-zinc-950 z-10 pt-36 overflow-auto"
             ref={ref}
         >
