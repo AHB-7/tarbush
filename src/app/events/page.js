@@ -103,8 +103,8 @@ export default function Page() {
                         />
                     </div>
                     <h2 className="bg-red-500 p-1 mt-6 font-extrabold text-normal rounded-md w-fit text-center">
-                        Viss posten på kassa for å få rabatten
-                    </h2>{" "}
+                        Vis innlegget i kassen for å få rabatten.
+                    </h2>
                 </div>
             </section>
         </>
