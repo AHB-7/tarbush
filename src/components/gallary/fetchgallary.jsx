@@ -72,21 +72,7 @@ const GalleryDetailPage = ({ params }) => {
                         {gallery.title}
                     </h1>
                     <p className="self-start font-thin text-justify py-4">
-                        {gallery.text} Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Quae explicabo quod soluta in impedit
-                        fugit saepe? Eveniet voluptates distinctio dolor fugiat
-                        a adipisci vitae, veniam soluta maxime! Necessitatibus,
-                        facere obcaecati. adipisicing elit. Quae explicabo quod
-                        soluta in impedit fugit saepe? Eveniet voluptates
-                        distinctio dolor fugiat a adipisci vitae, veniam soluta
-                        maxime! Necessitatibus, facere obcaecati. adipisicing
-                        elit. Quae explicabo quod soluta in impedit fugit saepe?
-                        Eveniet voluptates distinctio dolor fugiat a adipisci
-                        vitae, veniam soluta maxime! Necessitatibus, facere
-                        obcaecati. adipisicing elit. Quae explicabo quod soluta
-                        in impedit fugit saepe? Eveniet voluptates distinctio
-                        dolor fugiat a adipisci vitae, veniam soluta maxime!
-                        Necessitatibus, facere obcaecati.
+                        {gallery.text}
                     </p>
                     <div className="text-center my-14">
                         <Link

@@ -4,7 +4,7 @@ export default function OpningsTimes() {
             <h2 className="text-xl">Åpningstider</h2>
             <ul className="flex flex-col  w-full">
                 <li className=" w-full flex justify-between">
-                    <h3 className="">Mandag</h3> <h3>14:00-22:00</h3>
+                    <h3 className="">Mandag</h3> <h3>11:00-22:00</h3>
                 </li>
                 <li className=" w-full flex justify-between">
                     <h3 className="">Tirsdag</h3>

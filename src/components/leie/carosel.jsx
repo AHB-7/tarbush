@@ -28,7 +28,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="h-screen mt-36 container mx-auto">
+        <section className="h-screen mt-36 container mx-auto ">
             <div className="flex items-start justify-center flex-wrap gap-16">
                 <div className="text-center">
                     <h1 className="text-start max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -39,6 +39,13 @@ const HeroSection = () => {
                         konfirmasjoner, bryllup, firmafester, julebord, osv. For
                         mer informasjon, ta kontakt med oss.
                     </p>
+                    <ul className="text-start list-disc ms-3  max-w-2xl mb-6 text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                        <li className=" list-item">
+                            Plass opp til 40 personer
+                        </li>
+                        <li>Muligheten for å bestille mat og drikke</li>{" "}
+                        <li>Kakker må bestilles en uke før</li>
+                    </ul>
                     <div className="w-full flex justify-center flex-col">
                         <Link
                             href="/info"
@@ -49,7 +56,7 @@ const HeroSection = () => {
                         {/* <p>epost: tarbushcm</p> */}
                     </div>
                 </div>
-                <div className="h-full w-full max-w-[30rem]">
+                <div className="h-full w-full max-w-[30rem] mb-16">
                     <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
