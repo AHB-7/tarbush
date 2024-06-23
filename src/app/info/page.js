@@ -8,25 +8,39 @@ import { FaClock, FaInfoCircle, FaMap } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa6";
 
 export const metadata = {
-    title: "Kontakt",
+    title: "Kontakt og Informasjon",
     description:
-        "Kontakt oss for mer informasjon eller for å bestille time i dag. Ring oss eller besøk oss i Trondheim.",
+        "Få all informasjon du trenger om Tarbush Restaurant. Kontakt oss for mer informasjon eller bestill bord i dag. Besøk oss i Trondheim.",
     keywords: [
+        "Tarbush Restaurant",
         "kontakt",
         "kontakt oss",
         "bestille time",
+        "bestille bord",
         "Trondheim",
         "restaurant Trondheim",
-        "Tarbush Restaurant",
         "spørsmål",
         "åpningstider",
         "telefonnummer Tarbush",
         "besøksadresse Tarbush",
+        "lunsjservering",
+        "rabatt",
+        "reservasjon",
+        "mat Trondheim",
+        "autentisk mat",
+        "syrisk mat",
+        "kurdiske retter",
+        "familierestaurant",
+        "restaurant informasjon",
+        "restaurant kontakt",
+        "restaurant åpningstider",
+        "restaurant beliggenhet",
+        "Google Maps Tarbush",
     ],
     author: "Tarbush Restaurant",
     link: {
         rel: "canonical",
-        href: "https://www.tarbush.no/kontakt",
+        href: "https://www.tarbush.no/informasjon",
     },
     htmlAttributes: {
         lang: "no",
@@ -42,15 +56,19 @@ export default function Page() {
         <section className="flex items-center justify-center">
             <section>
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-                    <div class="p-4 mb-8 mt-12 flex flex-col items-center gap-6">
+                    <div class="p-1 mb-8 mt-12 flex flex-col items-center gap-6">
                         <h1 className="text-white text-center text-4xl md:text-5xl font-extrabold mb-2">
                             Hvor, Når og Hvordan ?
                         </h1>
+                        <p class="text-lg font-normal text-gray-400 mb-1">
+                            Click på knappen for å ringe oss direkte eller sende
+                            oss en melding.
+                        </p>
                         <ContactClient />
                     </div>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-zinc-900 border border-zinc-700 shadow-sm shadow-white rounded-lg px-4 py-8 md:p-12">
-                            <div class="bg-zinc-700 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md">
+                        <div class=" bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 border border-zinc-700 shadow-sm shadow-white rounded-lg px-4 py-8 md:p-12">
+                            <div class="bg-green-700 bg-opacity-80 text-white text-xs font-medium inline-flex items-center rounded-md py-1 px-1">
                                 <FaMap className="mr-2" />
                                 Adresse
                             </div>
@@ -84,8 +102,8 @@ export default function Page() {
                                 Get Directions
                             </Link>
                         </div>
-                        <div class="bg-zinc-900 border border-zinc-700 shadow-sm shadow-white rounded-lg px-4 py-8 md:p-12">
-                            <div class="bg-zinc-700 text-white text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md ">
+                        <div class="from-zinc-900 via-zinc-800 to-zinc-900 border border border-zinc-700 shadow-sm shadow-white rounded-lg px-4 py-8 md:p-12">
+                            <div class="bg-orange-400  bg-opacity-80 text-white text-xs font-medium inline-flex items-center rounded-md py-1 px-1">
                                 <FaClock className="mr-2 " />
                                 Åpningstider
                             </div>
@@ -94,15 +112,9 @@ export default function Page() {
                             </h1>
                             <div className="flex flex-col items-center justify-center">
                                 <OpningsTimes />
-                                <Link
-                                    href={googleMapsUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-8 flex items-center gap-2 mt-8 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
-                                >
-                                    <FaBookOpen />
-                                    Ring og Book
-                                </Link>
+                                <div className="mt-8">
+                                    <ContactClient />
+                                </div>
                             </div>
                         </div>
                     </div>

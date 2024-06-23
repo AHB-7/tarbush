@@ -3,13 +3,14 @@ import Opning from ".././../components/events/opning";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Kontakt",
+    title: "Bestill Nå",
     description:
-        "Kontakt oss for mer informasjon eller for å bestille time i dag. Ring oss eller besøk oss i Trondheim.",
+        "Bestill bord hos Tarbush Restaurant eller kontakt oss for mer informasjon. Vi er her for deg i Trondheim.",
     keywords: [
-        "kontakt",
+        "Tarbush Restaurant",
+        "bestill nå",
         "kontakt oss",
-        "bestille time",
+        "bestille bord",
         "Trondheim",
         "restaurant Trondheim",
         "Tarbush Restaurant",
@@ -17,11 +18,19 @@ export const metadata = {
         "åpningstider",
         "telefonnummer Tarbush",
         "besøksadresse Tarbush",
+        "lunsjservering",
+        "rabatt",
+        "reservasjon",
+        "mat Trondheim",
+        "autentisk mat",
+        "syrisk mat",
+        "kurdiske retter",
+        "familierestaurant",
     ],
     author: "Tarbush Restaurant",
     link: {
         rel: "canonical",
-        href: "https://www.tarbush.no/kontakt",
+        href: "https://www.tarbush.no/bestill",
     },
     htmlAttributes: {
         lang: "no",
@@ -49,7 +58,7 @@ export default function Page() {
                         </Link>
                     </div>
                 </div>
-                <div className=" flex flex-col items-start justify-start relative -z-10">
+                <div className="flex flex-col items-start justify-start relative -z-10">
                     <h1 className="bg-white text-red-500 p-3 font-extrabold text-2xl rounded-md uppercase w-fit">
                         lunsjservering
                     </h1>
@@ -61,12 +70,12 @@ export default function Page() {
                         <br />
                         Adresse: <strong>Ivar Lykkes veg 4, 7075 Tiller</strong>
                     </p>
-                    <p className=" pt-8 pe-8">
+                    <p className="pt-8 pe-8">
                         Perfekt for en rask pause eller en koselig lunsj med
                         venner og kollegaer.
                     </p>
-                    <div className=" absolute top-0 me-7 mt-7 rotate-12 right-0 md:w-20 w-10 md:h-20 h-10 bg-red-500 rounded-full flex items-center justify-center">
-                        <p className=" text-white font-extrabold text-md md:text-3xl">
+                    <div className="absolute top-0 me-7 mt-7 rotate-12 right-0 md:w-20 w-10 md:h-20 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                        <p className="text-white font-extrabold text-md md:text-3xl">
                             15%
                         </p>
                     </div>

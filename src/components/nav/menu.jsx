@@ -111,7 +111,7 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
             >
                 <div className=" border px-2 py-1 rounded-md font-extrabold flex items-start gap-2 justify-center">
                     <p>Info</p>
-                    <FaInfoCircle className="text-xl animate-spin text-red-500" />
+                    <FaInfoCircle className="text-xl animate-pulse text-red-500" />
                 </div>
             </Link>
             <h3 className="text-md font-bold text-center text-gray-400">
