@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Opning from ".././../components/events/opning";
 import Link from "next/link";
 
 export const metadata = {

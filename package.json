@@ -1,6 +1,6 @@
 {
-    "name": "tarbusg001",
-    "version": "0.1.0",
+    "name": "mailing",
+    "version": "0.1.1",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -17,6 +17,7 @@
         "graphql-request": "^7.0.1",
         "leaflet": "^1.9.4",
         "next": "14.2.3",
+        "nodemailer": "^6.9.14",
         "react": "^18",
         "react-dom": "^18",
         "react-icons": "^5.2.1",
