@@ -2,6 +2,7 @@ import Navbar from "../components/nav/nav";
 import "../styles/globals.css";
 import { rubik } from "../ui/font";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
     title: "Tarbush Restaurant - Vi lover deg en opplevelse Restaurant i Trondheim",
