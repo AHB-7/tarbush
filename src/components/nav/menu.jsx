@@ -11,6 +11,7 @@ import {
     FaFacebookSquare,
     FaInfoCircle,
     FaInstagram,
+    FaMapMarkedAlt,
     FaSnapchatSquare,
     FaTripadvisor,
     FaYelp,
@@ -18,6 +19,9 @@ import {
 import { AiFillTikTok } from "react-icons/ai";
 import Sosialemedier from "./socialMedia";
 import { TfiInfo } from "react-icons/tfi";
+import { IoIosTime } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { FiPhoneCall } from "react-icons/fi";
 
 const Menu = React.forwardRef(({ setActive }, ref) => {
     const pathname = usePathname();
@@ -109,15 +113,22 @@ const Menu = React.forwardRef(({ setActive }, ref) => {
                     Blog
                 </Link>
             </div>
-            <Link
-                href="/info"
-                className="flex items-center justify-center my-auto "
-            >
-                <div className=" border px-2 py-1 rounded-md font-extrabold flex items-start gap-2 justify-center">
-                    <p>Info</p>
-                    <FaInfoCircle className="text-xl animate-pulse text-red-500" />
-                </div>
-            </Link>
+            <div className="flex items-center justify-center my-auto flex-col gap-4">
+                <Link href="/info" className=" w-44">
+                    <div className=" border px-2 py-1 rounded-md font-extrabold flex items-start gap-2 justify-center">
+                        <FaMapMarkedAlt className="text-2xl  text-red-500" />
+                        <p>Info</p>
+                        <IoIosTime className="text-2xl text-red-500" />
+                    </div>
+                </Link>
+                <Link href="/kontakt" className=" w-44">
+                    <div className=" border px-2 py-1 rounded-md font-extrabold flex items-start gap-2 justify-center">
+                        <MdEmail className="text-2xl  text-red-500" />
+                        <p>Kontakt</p>
+                        <FiPhoneCall className="text-2xl text-red-500" />
+                    </div>
+                </Link>
+            </div>
             <h3 className="text-md font-bold text-center text-gray-400">
                 Social Media
             </h3>
