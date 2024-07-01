@@ -8,14 +8,13 @@ import {
     FaTripadvisor,
     FaYelp,
 } from "react-icons/fa";
-import Sosialemedier from "../../components/nav/socialMedia";
 
 export const metadata = {
     title: "Kontakt",
     description:
         "Kontakt oss for mer informasjon eller for å bestille time i dag. Ring oss eller besøk oss i Trondheim.",
     keywords: [
-        "kontakt",
+        "Tarbush Restaurant",
         "kontakt oss",
         "bestille time",
         "Trondheim",
@@ -25,6 +24,22 @@ export const metadata = {
         "åpningstider",
         "telefonnummer Tarbush",
         "besøksadresse Tarbush",
+        "Autentisk syrisk mat",
+        "Kurdiske retter",
+        "Trondheim restaurant",
+        "Familie restaurant",
+        "Matopplevelse",
+        "Tradisjonell mat",
+        "Kontaktinformasjon Tarbush",
+        "Åpningstider Tarbush",
+        "Telefonnummer Tarbush",
+        "Besøksadresse Tarbush",
+        "Restaurant anmeldelser",
+        "Sosiale medier Tarbush",
+        "Ivar Lykkes veg 4",
+        "Matkultur Syria",
+        "Matkultur Kurdistan",
+        "Beste restaurant i Trondheim",
     ],
     author: "Tarbush Restaurant",
     link: {
@@ -53,9 +68,9 @@ export default function Page() {
                         </h2>
                         <p className="indent-8 px-2 md:px-10 ">
                             Vi er en familie drevet restaurant som serverer
-                            autentisk syrisk, kurdisk og norsk mat. Hos oss
-                            finner du retter laget med kjærlighet og de beste
-                            råvarene. Vår meny er en hyllest til våre røtter og
+                            autentisk syrisk og kurdisk mat. Hos oss finner du
+                            retter laget med kjærlighet og de beste råvarene.
+                            Vår meny er en hyllest til våre røtter og
                             tradisjoner, og vi ønsker å dele vår matkultur med
                             deg. Velkommen til en unik matopplevelse hvor hver
                             rett forteller en historie. Bli med oss på en

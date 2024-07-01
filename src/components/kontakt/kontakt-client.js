@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { MdOutlineCopyAll } from "react-icons/md";
 import { IoMdDoneAll } from "react-icons/io";
+import { IoCopy, IoCopyOutline } from "react-icons/io5";
 
 export default function ContactClient() {
     const [isCopied, setIsCopied] = useState(false);
@@ -14,27 +15,20 @@ export default function ContactClient() {
     };
 
     return (
-        <div className="bg-opacity-5  bg-black after:-z-10 after:bg-opacity-5 after:bg-black relative flex flex-row items-center gap-4 justify-center w-full border max-w-[18rem] max-h-[20rem] rounded-lg after:rounded-lg after:border after:absolute after:max-w-[18rem] after:top-2 after:right-2  after:max-h-[20rem] after:w-full after:h-full after:border-red-400">
-            {isCopied ? (
-                <p className="text-green-400 text-lg py-4 ">
-                    Tlf: +47 929 27 015
-                </p>
-            ) : (
-                <p className="text-white text-lg py-4">Tlf: +47 929 27 015</p>
-            )}
-
+        <div className="border rounded-md flex gap-2 p-2">
             {isCopied ? (
                 <button
                     onClick={handleCopy}
-                    className="text-green-400 flex items-center "
+                    className="text-green-400 flex items-center"
                 >
-                    kopiert
-                    <IoMdDoneAll className="text-green-400  text-xl ms-1" />
+                    <p className="text-green-400 text-lg ">+47 929 27 015</p>
+
+                    <IoCopy className="text-green-400 text-2xl ms-2" />
                 </button>
             ) : (
                 <button onClick={handleCopy} className="flex items-center">
-                    Kopi
-                    <MdOutlineCopyAll className="text-red-500 text-xl ms-1" />
+                    <p className="text-lg ">+47 929 27 015</p>
+                    <IoCopyOutline className=" text-2xl ms-2" />
                 </button>
             )}
         </div>

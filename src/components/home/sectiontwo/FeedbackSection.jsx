@@ -57,8 +57,8 @@ const FeedbackSection = () => {
 
         if (!content) {
             formErrors.content = "Content is required.";
-        } else if (content.length < 100) {
-            formErrors.content = "Content must be at least 100 characters.";
+        } else if (content.length < 20) {
+            formErrors.content = "Content must be at least 20 characters.";
         }
 
         if (stars < 1 || stars > 5) {
@@ -209,7 +209,7 @@ const FeedbackSection = () => {
                                 />
                                 <CharacterCounter
                                     currentLength={content.length}
-                                    maxLength={100}
+                                    maxLength={20}
                                 />
                                 {errors.content && (
                                     <p className="text-red-500 text-sm">

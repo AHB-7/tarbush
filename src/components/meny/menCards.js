@@ -7,11 +7,15 @@ import cardStyle from "../../styles/card.module.css";
 import { roudIt } from "../../func/meny";
 import { menyItems } from "../../services/index";
 import { CiCircleChevDown } from "react-icons/ci";
+import { MdOutlineFastfood } from "react-icons/md";
 
 const Meny = () => {
     const [data, setData] = useState(null);
     const [isHovered, setIsHovered] = useState(null);
-    const [expandedGroups, setExpandedGroups] = useState({});
+    const [checkedGroups, setCheckedGroups] = useState({});
+    const [selectAll, setSelectAll] = useState(true);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [selectedDish, setSelectedDish] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
@@ -21,9 +25,20 @@ const Meny = () => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        if (data) {
+            const initialGroups = groupByGruppe(data);
+            setCheckedGroups(
+                Object.keys(initialGroups).reduce((acc, gruppe) => {
+                    acc[gruppe] = true;
+                    return acc;
+                }, {})
+            );
+        }
+    }, [data]);
+
     if (!data) return <Loading />;
 
-    // Utility function to group items by `gruppe`
     const groupByGruppe = (items) => {
         return items.reduce((groups, item) => {
             const group = item.gruppe || "Other";
@@ -37,119 +52,193 @@ const Meny = () => {
 
     const groupedData = groupByGruppe(data);
 
-    const toggleGroup = (gruppe) => {
-        setExpandedGroups((prev) => ({
-            ...prev,
-            [gruppe]: !prev[gruppe],
-        }));
+    const handleGroupClick = (gruppe) => {
+        setCheckedGroups((prev) => {
+            const newCheckedGroups = { ...prev, [gruppe]: !prev[gruppe] };
+            const allSelected = Object.values(newCheckedGroups).every(Boolean);
+            setSelectAll(allSelected);
+            return newCheckedGroups;
+        });
+    };
+
+    const handleSelectAll = () => {
+        const newCheckedState = !selectAll;
+        setSelectAll(newCheckedState);
+        setCheckedGroups(
+            Object.keys(groupedData).reduce((acc, gruppe) => {
+                acc[gruppe] = newCheckedState;
+                return acc;
+            }, {})
+        );
+    };
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
+    const handleDishClick = (dish) => {
+        setSelectedDish(dish);
+    };
+
+    const handleCloseCard = () => {
+        setSelectedDish(null);
+    };
+
+    const handleBackdropClick = (e) => {
+        if (e.target === e.currentTarget) {
+            handleCloseCard();
+        }
     };
 
     return (
-        <div className="container mx-auto">
-            {Object.keys(groupedData).map((gruppe) => (
-                <div key={gruppe} className="mb-8">
+        <div className="container mx-auto flex flex-wrap max-w-screen-lg">
+            <div className="w-full p-4 flex items-start justify-start flex-wrap gap-2">
+                <div className="relative w-full flex gap-2 justify-end flex-col items-end">
                     <div
-                        className="container outline outline-orange-50 outline-1 flex items-center justify-center mx-auto rounded-lg my-4 py-2 cursor-pointer"
-                        onClick={() => toggleGroup(gruppe)}
+                        className={`flex items-center bg-zinc-800 justify-center w-[10rem] cursor-pointer p-1 rounded-xl ${
+                            selectAll
+                                ? "border-2  "
+                                : " border-2 border-zinc-800 "
+                        }`}
+                        onClick={handleSelectAll}
                     >
-                        <h2 className="text-2xl w-full ps-5 font-bold">
-                            {gruppe}
-                        </h2>
-                        <CiCircleChevDown className="text-4xl me-3" />
+                        <p className="text-md font-light">Alle Retter</p>
                     </div>
-                    {expandedGroups[gruppe] && (
-                        <div
-                            className={`${cardStyle.cardContainer} flex justify-around p-2 flex-wrap`}
-                        >
-                            {groupedData[gruppe].map((item) => (
-                                <motion.div
-                                    key={item.id}
-                                    initial={{ y: 20, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    transition={{
-                                        ease: "easeInOut",
-                                        duration: 0.7,
-                                    }}
-                                    className={`${cardStyle.card} p-4 shadow-lg h-auto shadow-stone-900 rounded-lg w-96`}
-                                    onMouseEnter={() => setIsHovered(item.id)}
-                                    onMouseLeave={() => setIsHovered(null)}
+                    <button
+                        onClick={toggleDropdown}
+                        className="bg-zinc-700 flex items-center justify-center gap-2 text-md w-[10rem] cursor-pointer p-1 rounded-xl"
+                    >
+                        <p className="text-md font-light">Velg Retter</p>
+                        <MdOutlineFastfood className="text-xl" />
+                    </button>
+                    {dropdownOpen && (
+                        <div className="absolute z-10 p-3 bg-zinc-800 shadow-md rounded-lg top-20 grid grid-cols-2 gap-4">
+                            {Object.keys(groupedData).map((gruppe) => (
+                                <div
+                                    key={gruppe}
+                                    className={`flex items-center bg-zinc-700 text-white justify-center w-full cursor-pointer p-1 rounded-lg ${
+                                        checkedGroups[gruppe]
+                                            ? "border-2 "
+                                            : "border-2 border-zinc-800"
+                                    }`}
+                                    onClick={() => handleGroupClick(gruppe)}
                                 >
-                                    <motion.div
-                                        initial="initial"
-                                        animate={
-                                            isHovered === item.id
-                                                ? "exit"
-                                                : "enter"
-                                        }
-                                        variants={roudIt}
-                                    >
-                                        {item.dishImage?.url && (
-                                            <Image
-                                                src={item.dishImage.url}
-                                                alt={item.dishName}
-                                                width={400}
-                                                height={400}
-                                                className={`${cardStyle.cardImage}`}
-                                            />
-                                        )}
-                                    </motion.div>
-                                    <h2 className="text-xl font-bold py-4 border-b">
-                                        {item.dishName}
-                                    </h2>
-                                    <div className="h-20 py-4">
-                                        {item.ingredients &&
-                                            item.ingredients.text && (
-                                                <p className="text-pretty">
-                                                    {item.ingredients.text}
-                                                </p>
-                                            )}
-                                    </div>
-                                    <div className="pt-6">
-                                        {Array.isArray(item.allergier) &&
-                                            item.allergier.length > 0 && (
-                                                <div className="flex justify-start">
-                                                    <p className="text-zinc-300 me-2">
-                                                        Allergier:{" "}
-                                                    </p>
-                                                    {item.allergier && (
-                                                        <div className="flex items-center">
-                                                            {item.allergier.map(
-                                                                (
-                                                                    allergy,
-                                                                    index
-                                                                ) => (
-                                                                    <p
-                                                                        key={
-                                                                            index
-                                                                        }
-                                                                        className="w-fit bg-yellow-400 text-black text-xs me-1 px-2 py-0.5 rounded-full dark:bg-blue-600 font-thin dark:text-white"
-                                                                    >
-                                                                        {allergy.trim()}
-                                                                    </p>
-                                                                )
-                                                            )}
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            )}
-                                        <div className="flex justify-between py-2">
-                                            <p className="text-xl text-zinc-300 me-2">
-                                                Pris: {item.price} NOK{" "}
-                                            </p>
-                                            <Link
-                                                href={`/kontakt`}
-                                                className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
-                                            >
-                                                Bestill
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </motion.div>
+                                    <p className="text-md font-light">
+                                        {gruppe}
+                                    </p>
+                                </div>
                             ))}
                         </div>
                     )}
                 </div>
-            ))}
+            </div>
+            {Object.keys(groupedData).map(
+                (gruppe) =>
+                    checkedGroups[gruppe] && (
+                        <div key={gruppe} className="w-full mb-8 p-2">
+                            <h2 className="text-2xl text-center font-bold mb-4 py-6 ps-5 mx-2  text-red-500 bg-white rounded-lg">
+                                {gruppe}
+                            </h2>
+                            <div className={` flex flex-wrap gap-4 mx-2`}>
+                                {groupedData[gruppe].map((item) => (
+                                    <div
+                                        key={item.id}
+                                        className={`w-[20rem] grow border p-3 rounded-lg cursor-pointer transition-all duration-300 hover:shadow-sm hover:shadow-slate-300 `}
+                                        onClick={() => handleDishClick(item)}
+                                    >
+                                        <h2 className="text-lg py-2 border-b">
+                                            {item.dishName}
+                                        </h2>
+                                        <div className="flex justify-between py-2">
+                                            <p className="text-lg text-zinc-300 me-2">
+                                                Pris: {item.price} NOK
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )
+            )}
+            {selectedDish && (
+                <div
+                    className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-50"
+                    onClick={handleBackdropClick}
+                >
+                    <div className=" bg-zinc-800 p-6 rounded-lg shadow-lg w-full max-w-lg relative">
+                        <button
+                            className="absolute top-4 right-4 text-xl"
+                            onClick={handleCloseCard}
+                        >
+                            &times;
+                        </button>
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                ease: "easeInOut",
+                                duration: 0.7,
+                            }}
+                        >
+                            {selectedDish.dishImage?.url && (
+                                <Image
+                                    src={selectedDish.dishImage.url}
+                                    alt={selectedDish.dishName}
+                                    width={400}
+                                    height={400}
+                                    className={`${cardStyle.cardImage}`}
+                                />
+                            )}
+                        </motion.div>
+                        <h2 className="text-xl font-bold py-2 border-b">
+                            {selectedDish.dishName}
+                        </h2>
+                        <div className="py-2">
+                            {selectedDish.ingredients &&
+                                selectedDish.ingredients.text && (
+                                    <p className="text-pretty py-2">
+                                        {selectedDish.ingredients.text}
+                                    </p>
+                                )}
+                        </div>
+                        <div className="">
+                            {Array.isArray(selectedDish.allergier) &&
+                                selectedDish.allergier.length > 0 && (
+                                    <div className="flex justify-start py-2">
+                                        <p className="text-zinc-300">
+                                            Allergier:
+                                        </p>
+                                        {selectedDish.allergier && (
+                                            <div className="flex items-center flex-wrap gap-1">
+                                                {selectedDish.allergier.map(
+                                                    (allergy, index) => (
+                                                        <p
+                                                            key={index}
+                                                            className="w-fit bg-yellow-400 text-black text-xs me-1 px-2 py-0.5 rounded-full dark:bg-blue-600 font-thin dark:text-white"
+                                                        >
+                                                            {allergy.trim()}
+                                                        </p>
+                                                    )
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+                            <div className="flex justify-between py-2">
+                                <p className="text-xl text-zinc-300 me-2">
+                                    Pris: {selectedDish.price} NOK
+                                </p>
+                                <Link
+                                    href={`/kontakt`}
+                                    className="px-6 py-2 bg-white hover:bg-black hover:text-white transition-all text-black rounded-lg shadow-inner hover:shadow-xl duration-300"
+                                >
+                                    Bestill
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
