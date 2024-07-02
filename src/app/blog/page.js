@@ -72,20 +72,22 @@ const GalleryPage = async () => {
                         Kontakt oss for å dele
                     </Link>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className=" container max-w-7xl mx-auto grid xl:grid-cols-4 gap-4 lg:grid-cols-3 grid-cols-2 ">
                     {galleries.map((gallery) => (
-                        <div key={gallery.id} className="grid gap-4">
+                        <div
+                            key={gallery.id}
+                            className=" h-auto overflow-hidden"
+                        >
                             <Link
                                 href={`/blog/${gallery.id}`}
-                                className="opacity-80 saturate-100 hover:saturate-50 hover:scale-105 hover:opacity-100 transition-all duration-300 ease-in-out"
+                                className=" w-fit h-fit opacity-80   saturate-100 hover:saturate-50 hover:scale-105 hover:opacity-100 transition-all duration-300 ease-in-out"
                             >
                                 <Image
-                                    className="h-auto max-w-full rounded-lg"
+                                    className="w-72 h-72 rounded-lg object-cover bg-center bg-no-repeat"
                                     src={gallery.resImage[0].url}
                                     alt={gallery.title}
-                                    width={500}
-                                    height={500}
-                                    layout="responsive"
+                                    width={1000}
+                                    height={1000}
                                 />
                             </Link>
                         </div>

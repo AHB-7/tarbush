@@ -6,7 +6,7 @@ const graphQL = new GraphQLClient(api_URL);
 
 export async function fetchGallery() {
     const query = gql`
-        query getGallery {
+        query galleries {
             galleries(first: 9, orderBy: publishedAt_DESC, stage: PUBLISHED) {
                 id
                 publishedAt
@@ -19,6 +19,7 @@ export async function fetchGallery() {
         }
     `;
     const res = await graphQL.request(query);
+
     return res.galleries;
 }
 
