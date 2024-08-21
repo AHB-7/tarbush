@@ -25,6 +25,27 @@ export const metadata = {
         "syrisk mat",
         "kurdiske retter",
         "familierestaurant",
+        "Studentrabatt",
+        "studentbord",
+        "rabatt",
+        "NTNU",
+        "universitetstid",
+        "fikspunkt",
+        "universitet",
+        "Studenttilbud",
+        "rabatt for studenter",
+        "billig mat NTNU",
+        "studentvennlig restaurant",
+        "mattilbud studenter",
+        "spisested studentrabatt",
+        "studentrabatt på mat",
+        "spis billig NTNU",
+        "rabattordning studenter",
+        "spisesteder Trondheim",
+        "billig take away studenter",
+        "lunsjtilbud studenter",
+        "måltider Trondheim studenter",
+        "studentrabatt Trondheim NTNU",
     ],
     author: "Tarbush Restaurant",
     link: {
@@ -70,13 +91,13 @@ export default function Page() {
                     <div className=" w-full flex items-center justify-center pt-4">
                         <Link
                             href="/kontakt"
-                            className="px-6 relative text uppercase py-2.5 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
+                            className="px-6 relative text uppercase py-2.5 text-white bg-red-500 shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-black hover:bg-white"
                         >
                             Ring for å bestille
                         </Link>
                     </div>
                     <div>
-                        <ul className="list-disc list-inside pb-12 px-4">
+                        <ul className="list-disc list-inside pb-12 px-4 pt-4">
                             <li className=" list-item">
                                 tilbudet gjelder kun for studenter med gyldig
                                 studentbevis

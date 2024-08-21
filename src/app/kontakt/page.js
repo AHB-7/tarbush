@@ -3,6 +3,8 @@
 import { useState } from "react";
 import ContactClient from "../../components/info/kontakt-client";
 import { SiHomeassistantcommunitystore } from "react-icons/si";
+import Link from "next/link";
+import { MdOutlineFastfood } from "react-icons/md";
 
 // Email validation function
 const validateEmail = (email) => {
@@ -107,6 +109,16 @@ export default function SendTheMail() {
                     Email: kundeservice@tarbush.no
                 </p>
                 <ContactClient />
+                <p class="text-lg font-normal text-gray-400 mb-1 text-center">
+                    Du kan bestille via Foodora ved å klikke på linken under.
+                </p>
+                <Link
+                    className=" border-b-2 border-pink-600 -mt-4 text-2xl font-bold text-whtie text-center flex items-center gap-2 justify-center text-pink-600"
+                    href="https://www.foodora.no/restaurant/l0k7/tarbush-restaurant"
+                >
+                    <p>Foodora</p>
+                    <MdOutlineFastfood />
+                </Link>
             </div>
             <div className="max-w-md mx-auto p-5 border rounded shadow-lg mt-10 mb-20">
                 <h2 className="text-3xl font-bold mb-5">Send melding</h2>
