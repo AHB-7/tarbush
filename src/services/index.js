@@ -4,7 +4,7 @@ import { GraphQLClient, gql } from "graphql-request";
 
 const graphQL = new GraphQLClient(api_URL);
 
-export async function fetchGallery() {
+export async function fetchGallery(limit = 100) {
     const query = gql`
         query galleries {
             galleries(first: 9, orderBy: publishedAt_DESC, stage: PUBLISHED) {
@@ -19,7 +19,6 @@ export async function fetchGallery() {
         }
     `;
     const res = await graphQL.request(query);
-
     return res.galleries;
 }
 
@@ -42,7 +41,7 @@ export async function fetchGalleryById(id) {
     return res.gallery;
 }
 
-export async function menyItems(limit = 100) {
+export async function menyItems(limit = 1000) {
     const query = gql`
         query menyItems($limit: Int!) {
             menies(first: $limit) {
