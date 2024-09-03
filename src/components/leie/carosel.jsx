@@ -29,7 +29,7 @@ const HeroSection = () => {
 
     return (
         <section className="h-screen mt-36 container mx-auto ">
-            <div className="flex items-start justify-center flex-wrap gap-16">
+            <div className="flex items-start justify-center flex-wrap gap-16 px-4">
                 <div className="text-center">
                     <h1 className="text-start max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
                         Vi leier ut lokaler for alle anledninger!
@@ -79,7 +79,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/lockal/lokal-0.jpg"
+                                    src="/images/lockal/1.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
@@ -90,7 +90,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/lockal/lokal-1.jpg"
+                                    src="/images/lockal/2.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
@@ -101,7 +101,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/lockal/lokal-2.jpg"
+                                    src="/images/lockal/3.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
@@ -112,7 +112,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/lockal/lokal-3.jpg"
+                                    src="/images/lockal/4.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
@@ -123,7 +123,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/lockal/lokal-4.jpg"
+                                    src="/images/lockal/5.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"
@@ -134,7 +134,7 @@ const HeroSection = () => {
                         <SwiperSlide>
                             <div className="relative h-96">
                                 <Image
-                                    src="/images/lockal/lokal.jpg"
+                                    src="/images/lockal/6.jpg"
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-lg"

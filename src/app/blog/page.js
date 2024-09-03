@@ -72,18 +72,15 @@ const GalleryPage = async () => {
                         Kontakt oss for å dele
                     </Link>
                 </div>
-                <div className=" container max-w-7xl mx-auto grid xl:grid-cols-4 gap-4 lg:grid-cols-3 grid-cols-2 ">
+                <div className="container max-w-7xl mx-auto flex gap-4 flex-wrap">
                     {galleries.map((gallery) => (
-                        <div
-                            key={gallery.id}
-                            className=" h-auto overflow-hidden"
-                        >
+                        <div key={gallery.id} className=" md:w-[31%] w-[47%]">
                             <Link
                                 href={`/blog/${gallery.id}`}
-                                className=" w-fit h-fit opacity-80   saturate-100 hover:saturate-50 hover:scale-105 hover:opacity-100 transition-all duration-300 ease-in-out"
+                                className="opacity-80 aspect-square saturate-100 hover:saturate-50 hover:scale-105 hover:opacity-100 transition-all duration-300 ease-in-out"
                             >
                                 <Image
-                                    className="w-72 h-72 rounded-lg object-cover bg-center bg-no-repeat"
+                                    className="rounded-lg aspect-square object-cover bg-center bg-no-repeat"
                                     src={gallery.resImage[0].url}
                                     alt={gallery.title}
                                     width={1000}

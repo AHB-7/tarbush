@@ -42,13 +42,26 @@ const GalleryDetailPage = ({ params }) => {
                     backgroundImage: `url(${gallery.resImage[0].url})`,
                 }}
             ></div>
-            <div className="mx-auto px-4 gap-4 container w-11/12 md:w-7/12 md:p-0 md:pb-3 flex flex-col items-center justify-center">
-                <div className=" w-screen px-12 md:w-10/12">
+            <div className="mx-auto max-w-3xl px-4 gap-4 container md:p-0 md:pb-3 flex flex-col items-center justify-center">
+                <div className="bg-zinc-900 bg-opacity-80 flex flex-col p-2 rounded-md pt-14  mt-24">
+                    <div className="flex justify-between">
+                        <h1 className="text-2xl self-start md:text-3xl font-bold text-white p-2 rounded-lg my-2">
+                            {gallery.title}
+                        </h1>
+                        <p className="self-end font-thin text-xs ">
+                            Publisert: {formattedDate}
+                        </p>
+                    </div>
+                    <p className="self-start font-thin text-justify py-6">
+                        {gallery.text}
+                    </p>
+                </div>
+                <div className="w-full">
                     <Swiper
                         effect={"cards"}
                         grabCursor={true}
                         modules={[EffectCards]}
-                        className="w-full mt-24 max-h-[30rem] lg:h-[30rem] "
+                        className="w-full"
                     >
                         {gallery.resImage.map((image, index) => (
                             <SwiperSlide key={index}>
@@ -63,18 +76,7 @@ const GalleryDetailPage = ({ params }) => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </div>
-                <p className="self-end font-thin text-xs">
-                    Publisert: {formattedDate}
-                </p>
-                <div className="bg-zinc-900 bg-opacity-80 flex flex-col p-2 rounded-md pt-14">
-                    <h1 className="text-2xl self-start md:text-3xl bg-white font-bold text-red-500 p-2 rounded-lg my-2">
-                        {gallery.title}
-                    </h1>
-                    <p className="self-start font-thin text-justify py-4">
-                        {gallery.text}
-                    </p>
-                    <div className="text-center my-14">
+                    <div className="text-center my-12">
                         <Link
                             href="/blog"
                             className="px-7 font-normal relative text uppercase py-2.5 text-black bg-white shadow-md shadow-zinc-800 hover:shadow-none rounded-md transition-all duration-300  hover:text-white hover:bg-red-600"
