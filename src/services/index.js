@@ -57,13 +57,13 @@ export async function menyItems(limit = 1000) {
                 ingredients {
                     text
                 }
+                vegitar
             }
         }
     `;
     const res = await graphQL.request(query, { limit });
     return res;
 }
-// api.js
 
 export async function createFeedItem(content, stars, feedbackName) {
     const mutation = gql`
