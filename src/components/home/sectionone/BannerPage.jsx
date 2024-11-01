@@ -6,6 +6,14 @@ import React from "react";
 export default function BannerPage() {
     return (
         <header className="overflow-x-hidden w-ful">
+            <div>
+                <div className=" bg-red-500 bg-opacity-50 md:h-12 h-32 text-center flex items-end justify-center md:items-center absolute top-0 left-0 w-full">
+                    <p>
+                        5.11.2024 - Kl. 16:00: Vi holder stengt på grunn av
+                        spesielle arrangementer.
+                    </p>
+                </div>
+            </div>
             <div className=" flex items-center h-screen justify-center text-center flex-col">
                 <div
                     className="-z-10 absolute h-screen w-full bg-fixed bg-cover bg-center bg-no-repeat filter brightness-50 saturate-0"
