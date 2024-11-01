@@ -9,7 +9,7 @@ export default function BannerPage() {
             <div>
                 <div className=" bg-red-500 bg-opacity-50 md:h-12 h-32 text-center flex items-end justify-center md:items-center absolute top-0 left-0 w-full">
                     <p>
-                        5.11.2024 - Kl. 16:00: Vi holder stengt på grunn av
+                        5.11.2024 - Kl. 18:00: Vi holder stengt på grunn av
                         spesielle arrangementer.
                     </p>
                 </div>
